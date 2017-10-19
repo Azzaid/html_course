@@ -1,0 +1,4 @@
+nav ul {font-size: 0;}
+nav li {display: inline-block; margin-right: 5px;}
+nav a {background-color: #3F3F3F; font-size: 20px; text-decoration: none; color: white; padding: 10px; line-height: 30px;}
+nav a:hover{background-color: #FF6600}
