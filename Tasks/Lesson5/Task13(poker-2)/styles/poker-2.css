@@ -1,0 +1,18 @@
+div.rubber_frame_top {
+    background: url(../img/ramkaTop.png);
+    background-repeat: repeat-x;
+    background-color: white;
+}
+div.rubber_frame_bottom {background: url(../img/ramkaTop.png); background-repeat: repeat-x; background-position: bottom}
+div.rubber_frame_left {background: url(../img/ramkaSide.png); background-repeat: repeat-y;}
+div.rubber_frame_right {background: url(../img/ramkaSide.png); background-repeat: repeat-y; background-position: right}
+div.frame_corner_top_left {background: url(../img/ramkaTopLeftCorner.png); background-repeat: no-repeat; background-position: top left;}
+div.frame_corner_top_right {background: url(../img/ramkaTopRightCorner.png); background-repeat: no-repeat; background-position: top right;}
+div.frame_corner_bottom_left {background: url(../img/ramkaBottomLeftCorner.png); background-repeat: no-repeat; background-position: bottom left;}
+div.frame_corner_bottom_right {background: url(../img/ramkaBottomRightCorner.png); background-repeat: no-repeat; background-position: bottom right; padding: 30px 50px 50px 50px;}
+div.cardholder {padding: 80px; border: green 2px solid;}
+div.cardslot1 {background: url(../img/cards2.png); background-repeat: no-repeat; background-position: 0px -2330px; width: 140px; height: 190px; display: inline-block;}
+div.cardslot2 {background: url(../img/cards2.png); background-repeat: no-repeat; background-position: 0px -2135px; width: 140px; height: 190px; display: inline-block;}
+div.cardslot3 {background: url(../img/cards2.png); background-repeat: no-repeat; background-position: -290px -1940px; width: 140px; height: 190px; display: inline-block;}
+div.cardslot4 {background: url(../img/cards2.png); background-repeat: no-repeat; background-position: 0px -2330px; width: 140px; height: 190px; display: inline-block;}
+div.cardslot5 {background: url(../img/cards2.png); background-repeat: no-repeat; background-position: 0px -2330px; width: 140px; height: 190px; display: inline-block;}
