@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+<style>
+
+    body {margin: 0px}
+
+    table.main_table {border-collapse: collapse; border: blue 2px solid; padding: 5px; width: 100%; margin-bottom: 40px;}
+    table.main_table thead {border: blue 2px solid; padding: 5px; background-color: #888888; color: #ffffff;}
+    table.main_table tr th {border: blue 2px solid; padding: 5px; vertical-align: middle;}
+    table.main_table thead th {padding: 5px; border: 0px;}
+    th.cell_with_left_text {text-align: left;}
+    th.cell_with_right_text {text-align: right;}
+
+    table.dino_eye {border-collapse: collapse; /*background-color: #888888;*/ margin: auto}
+    table.dino_eye tr:nth-child(6n+1) th:nth-child(odd) {background-color: red;}
+    table.dino_eye tr:nth-child(6n+1) th:nth-child(4n) {background-color: lightgreen;}
+    table.dino_eye tr:nth-child(4n+2) th:nth-child(4n+2) {background-color: red;}
+    table.dino_eye tr:nth-child(4n+2) th:nth-child(7n+3) {background-color: lightgreen;}
+    table.dino_eye tr:nth-child(4n+2) th:nth-child(7n+5) {background-color: lightgreen;}
+    table.dino_eye tr:nth-child(7n+3) th:nth-child(6n+1) {background-color: red;}
+    table.dino_eye tr:nth-child(7n+5) th:nth-child(6n+1) {background-color: red;}
+    table.dino_eye tr:nth-child(7n+3) th:nth-child(4n+2) {background-color: lightgreen;}
+    table.dino_eye tr:nth-child(7n+5) th:nth-child(4n+2) {background-color: lightgreen;}
+    table.dino_eye tr:nth-child(4n) th:nth-child(6n+1) {background-color: lightgreen;}
+    table.dino_eye tr:nth-child(4n) th:nth-child(4n) {background-color: red;}
+
+    table.dino_eye th {height: 20px; width: 20px; /*border: 2px solid blueviolet;*/}
+
+</style>
+
+<h1>Пример сложной таблицы</h1>
+<table class="main_table">
+    <thead>
+    <th>Название 1</th>
+    <th>Название 2</th>
+    <th>Еще название</th>
+    <th>Куча элементов</th>
+    <th>Список 1</th>
+    <th>Список 2</th>
+    </thead>
+    <tr>
+        <th rowspan="11";>JPMC</th>
+        <th rowspan="5"; class="cell_with_left_text">CST</th>
+        <th rowspan="3"; class="cell_with_left_text">CT</th>
+        <th class="cell_with_left_text">ADS</th>
+        <th>1</th>
+        <th>10</th>
+    </tr>
+    <tr>
+        <th class="cell_with_left_text">BTO</th>
+        <th>2</th>
+        <th>15</th>
+    </tr>
+    <tr>
+        <th class="cell_with_left_text">CSI</th>
+        <th>3</th>
+        <th>6</th>
+    </tr>
+    <tr>
+        <th rowspan="2"; class="cell_with_left_text">VCT</th>
+        <th class="cell_with_left_text">ADS</th>
+        <th>4</th>
+        <th>10</th>
+    </tr>
+    <tr>
+        <th class="cell_with_left_text">BTO</th>
+        <th>5</th>
+        <th>15</th>
+    </tr>
+    <tr>
+        <th colspan="3" class="cell_with_right_text">Sub Total</th>
+        <th>6</th>
+        <th>15</th>
+    </tr>
+    <tr>
+        <th rowspan="4"; class="cell_with_left_text">CST</th>
+        <th rowspan="3"; class="cell_with_left_text">CT</th>
+        <th class="cell_with_left_text">ADS</th>
+        <th>7</th>
+        <th>10</th>
+    </tr>
+    <tr>
+        <th class="cell_with_left_text">BTO</th>
+        <th>8</th>
+        <th>15</th>
+    </tr>
+    <tr>
+        <th class="cell_with_left_text">CSI</th>
+        <th>9</th>
+        <th>6</th>
+    </tr>
+    <tr>
+        <th class="cell_with_left_text">VCT</th>
+        <th class="cell_with_left_text">ADS</th>
+        <th>10</th>
+        <th>10</th>
+    </tr>
+    <tr>
+        <th colspan="3" class="cell_with_right_text">Sub Total</th>
+        <th>11</th>
+        <th>15</th>
+    </tr>
+</table>
+
+<table class="dino_eye">
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>
+</body>
+</html>
