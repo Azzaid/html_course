@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mach-mach game</title>
+    <script src="scripts/gameEngineMK2.js"></script>
+    <link rel="stylesheet" href="styles/gamestyles.css">
+</head>
+<body>
+<header><h1>Match-match bame by Azzaid</h1></header>
+<section class="controls">
+        <p>Уровень сложности</p>
+        <input type="range" min="1" max="30" value="10" class="slider" id="difficulty">
+        <button onclick="startgame()">Новая игра</button>
+</section>
+<section>
+<p class="timer" id="timer"></p>
+</section>
+<section class="backside_chooser">
+        <div class="arrow_button" onclick="prevBackSide()">&lArr;</div>
+        <div class="card_sample" id="sample"></div>
+        <div class="arrow_button" onclick="nextBackSide()">&rArr;</div>
+        <div class="clearfix"></div>
+</section>
+<section class="game_field">
+    <div class="rubber_frame_top"; >
+        <div class="rubber_frame_bottom"; >
+            <div class="rubber_frame_left"; >
+                <div class="rubber_frame_right";>
+                    <div class="frame_corner_top_left";>
+                        <div class="frame_corner_top_right";>
+                            <div class="frame_corner_bottom_left";>
+                                <div class="frame_corner_bottom_right";>
+                                    <div id="cardholder" class="cardholder">
+                                        <div id="ruleset"><h3>Rules</h3>
+                                            <p>Find all the pairs! Pretty simple. Don't know what else to say.</p></div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer></footer>
+</body>
+</html>

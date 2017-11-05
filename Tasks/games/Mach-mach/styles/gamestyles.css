@@ -1,0 +1,27 @@
+.backside_chooser {width:200px; background-color: #888888;  float: top; font-size: 0;}
+.arrow_button {height: 193px; float: left; font-size: 30px; text-align: center;}
+.card_sample {width:144px; height: 193px; background-image: url("../images/bicycle back.jpg"); float: left;}
+.clearfix {clear: both;}
+
+.rubber_frame_top {background: url(../images/ramkaTop.png); background-repeat: repeat-x; background-color: white;}
+.rubber_frame_bottom {background: url(../images/ramkaTop.png); background-repeat: repeat-x; background-position: bottom}
+.rubber_frame_left {background: url(../images/ramkaSide.png); background-repeat: repeat-y;}
+.rubber_frame_right {background: url(../images/ramkaSide.png); background-repeat: repeat-y; background-position: right}
+.frame_corner_top_left {background: url(../images/ramkaTopLeftCorner.png); background-repeat: no-repeat; background-position: top left;}
+.frame_corner_top_right {background: url(../images/ramkaTopRightCorner.png); background-repeat: no-repeat; background-position: top right;}
+.frame_corner_bottom_left {background: url(../images/ramkaBottomLeftCorner.png); background-repeat: no-repeat; background-position: bottom left;}
+.frame_corner_bottom_right {background: url(../images/ramkaBottomRightCorner.png); background-repeat: no-repeat; background-position: bottom right; padding: 30px 50px 50px 50px;}
+
+.cardholder {padding: 10px}
+.card {height: 193px; width: 144px; position: relative; float: left; perspective: 1000px; transform-style: preserve-3d;
+    transition: 0.6s; margin: 5px;}
+.card_face, .card_back {backface-visibility: hidden;  transform-style: preserve-3d;
+    height: 193px; width: 144px; position: absolute;  top: 0; left: 0;}
+.card_face { background-image: url("../images/cards.png"); transform: rotateY(-180deg);}
+.card_back {background-image: url("../images/bicycle back.jpg");}
+
+.flipped {-moz-transform:rotateY(180deg);
+            -webkit-transform:rotateY(180deg);
+            -o-transform:rotateY(180deg);
+            -ms-transform:rotateY(180deg);
+            transform:rotateY(180deg)}

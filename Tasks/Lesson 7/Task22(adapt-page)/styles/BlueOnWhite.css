@@ -1,0 +1,9 @@
+body {margin: 0}
+
+header {text-align: center}
+h1 {background-color: #888888; line-height: 100px; margin: 0; }
+header img {width: 900px; height: 305px; }
+
+nav {margin: 0;  }
+nav div {display: inline-block; width: 250px; }
+nav p {height: 70px; overflow: hidden; }
