@@ -1,27 +1,52 @@
-.backside_chooser {width:200px; background-color: #888888;  float: top; font-size: 0;}
-.arrow_button {height: 193px; float: left; font-size: 30px; text-align: center;}
-.card_sample {width:144px; height: 193px; background-image: url("../images/bicycle back.jpg"); float: left;}
+@font-face {
+    font-family: florante;
+    src: url('../fonts/FLORLRG.woff');
+}
+
+body {margin: 0; background-image: url("../images/wood.jpg")}
+
+h1 {font-family: florante; color: rgb(195,153,83); text-align: center;}
+
+.controls {color: rgb(195,153,83); font-family: florante;}
+.start_button { font-size: 40px;  border: 0; position: relative; left:calc(50vw - 195px);
+    background-color: rgba(0,0,0,0); margin: auto;}
+.start_button p {position: absolute; top: 45px; left: 80px; margin: 0;}
+.start_button img {width: 390px; height: 135px;}
+
+.timer {color: rgb(195,153,83);  font-family: florante; font-size: 40px; float: right;}
+
+.backside_chooser {width:270px; background-color: rgba(0,0,0,0); margin: auto;}
+.arrow_button {height: 218px; float: left; color: rgb(195,153,83); font-size: 60px; text-align: center; cursor: pointer}
+.card_sample {width:148px; height: 218px; background-image: url("../images/99_full.jpg"); float: left;}
+
 .clearfix {clear: both;}
 
-.rubber_frame_top {background: url(../images/ramkaTop.png); background-repeat: repeat-x; background-color: white;}
-.rubber_frame_bottom {background: url(../images/ramkaTop.png); background-repeat: repeat-x; background-position: bottom}
-.rubber_frame_left {background: url(../images/ramkaSide.png); background-repeat: repeat-y;}
-.rubber_frame_right {background: url(../images/ramkaSide.png); background-repeat: repeat-y; background-position: right}
-.frame_corner_top_left {background: url(../images/ramkaTopLeftCorner.png); background-repeat: no-repeat; background-position: top left;}
-.frame_corner_top_right {background: url(../images/ramkaTopRightCorner.png); background-repeat: no-repeat; background-position: top right;}
-.frame_corner_bottom_left {background: url(../images/ramkaBottomLeftCorner.png); background-repeat: no-repeat; background-position: bottom left;}
-.frame_corner_bottom_right {background: url(../images/ramkaBottomRightCorner.png); background-repeat: no-repeat; background-position: bottom right; padding: 30px 50px 50px 50px;}
+.ruleset {color: rgb(195,153,83);  font-family: florante;}
 
-.cardholder {padding: 10px}
-.card {height: 193px; width: 144px; position: relative; float: left; perspective: 1000px; transform-style: preserve-3d;
-    transition: 0.6s; margin: 5px;}
-.card_face, .card_back {backface-visibility: hidden;  transform-style: preserve-3d;
-    height: 193px; width: 144px; position: absolute;  top: 0; left: 0;}
-.card_face { background-image: url("../images/cards.png"); transform: rotateY(-180deg);}
-.card_back {background-image: url("../images/bicycle back.jpg");}
+section.game_field {margin: auto;}
+section.game_field div {background-color: rgba(0,0,0,0)}
+
+.rubber_frame_top {background: url(../images/ramkaTop.png); background-repeat: repeat-x; display: inline-block;}
+.rubber_frame_bottom {background: url(../images/ramkaTop.png); background-repeat: repeat-x; background-position: bottom; display: inline-block;}
+.rubber_frame_left {background: url(../images/ramkaSide.png); background-repeat: repeat-y; display: inline-block;}
+.rubber_frame_right {background: url(../images/ramkaSide.png); background-repeat: repeat-y; background-position: right; display: inline-block;}
+.frame_corner_top_left {background: url(../images/ramkaTopLeftCorner.png); background-repeat: no-repeat; background-position: top left; display: inline-block;}
+.frame_corner_top_right {background: url(../images/ramkaTopRightCorner.png); background-repeat: no-repeat; background-position: top right; display: inline-block;}
+.frame_corner_bottom_left {background: url(../images/ramkaBottomLeftCorner.png); background-repeat: no-repeat; background-position: bottom left; display: inline-block;}
+.frame_corner_bottom_right {background: url(../images/ramkaBottomRightCorner.png); background-repeat: no-repeat; background-position: bottom right; padding: 50px; display: inline-block;}
+
+.cardholder {padding: 10px; display: inline-block;}
+.card {height: 245px; width: 144px; position: relative; float: left; perspective: 1000px; transform-style: preserve-3d;
+    transition: 0.6s; margin: 5px; cursor: pointer}
+.card_face, .card_back {height: 245px; width: 150px; backface-visibility: hidden;  transform-style: preserve-3d;
+     position: absolute;  top: 0; left: 0;}
+.card_face {transform: rotateY(-180deg);}
 
 .flipped {-moz-transform:rotateY(180deg);
             -webkit-transform:rotateY(180deg);
             -o-transform:rotateY(180deg);
             -ms-transform:rotateY(180deg);
             transform:rotateY(180deg)}
+
+.winScreen {font-size: 60px; background-color: rgba(0,0,0,0); display: none}
+
