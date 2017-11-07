@@ -17,7 +17,7 @@ h1 {font-family: florante; color: rgb(195,153,83); text-align: center;}
 
 .backside_chooser {width:270px; background-color: rgba(0,0,0,0); margin: auto;}
 .arrow_button {height: 218px; float: left; color: rgb(195,153,83); font-size: 60px; text-align: center; cursor: pointer}
-.card_sample {width:148px; height: 218px; background-image: url("../images/99_full.jpg"); float: left;}
+.card_sample {width:148px; height: 218px; float: left;}
 
 .clearfix {clear: both;}
 
@@ -36,7 +36,7 @@ section.game_field div {background-color: rgba(0,0,0,0)}
 .frame_corner_bottom_right {background: url(../images/ramkaBottomRightCorner.png); background-repeat: no-repeat; background-position: bottom right; padding: 50px; display: inline-block;}
 
 .cardholder {padding: 10px; display: inline-block;}
-.card {height: 245px; width: 144px; position: relative; float: left; perspective: 1000px; transform-style: preserve-3d;
+.card {height: 245px; width: 150px; position: relative; float: left; perspective: 1000px; transform-style: preserve-3d;
     transition: 0.6s; margin: 5px; cursor: pointer}
 .card_face, .card_back {height: 245px; width: 150px; backface-visibility: hidden;  transform-style: preserve-3d;
      position: absolute;  top: 0; left: 0;}
@@ -47,6 +47,10 @@ section.game_field div {background-color: rgba(0,0,0,0)}
             -o-transform:rotateY(180deg);
             -ms-transform:rotateY(180deg);
             transform:rotateY(180deg)}
+
+.invisible {visibility: hidden;}
+
+.hidden {display: none}
 
 .winScreen {font-size: 60px; background-color: rgba(0,0,0,0); display: none}
 
