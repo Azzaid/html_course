@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link href="Styles/Style.css" rel="stylesheet">
+</head>
+<body>
+<div id="sample"></div>
+<div id="toolBar" class="tool_bar">
+    <div id="samplejoint" class="joint" draggable="true" ondragstart="game.takeElement(event)"></div>
+    <div id="startButton" class="start_button" onclick="game.startSim()">START</div>
+    <div id="stopButton" class="stop_button" onclick="game.stopSim()">STOP</div>
+    <div class="clearfix"></div>
+</div>
+<div id="gameField" class="game_field" ondrop="game.addElement2(event)" ondragover="game.allowDrop(event)"><div class="ground"></div></div>
+<script src="Scripts/GameEngine.js"></script>
+</body>
+</html>
+

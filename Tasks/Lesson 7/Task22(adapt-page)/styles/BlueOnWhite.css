@@ -2,8 +2,9 @@ body {margin: 0}
 
 header {text-align: center}
 h1 {background-color: #888888; line-height: 100px; margin: 0; }
-header img {width: 900px; height: 305px; }
+header img {width: 100vw}
 
-nav {margin: 0;  }
-nav div {display: inline-block; width: 250px; }
-nav p {height: 70px; overflow: hidden; }
+nav {margin: auto; width: 100vw;}
+nav div {display: inline-block; width: 22%; min-width: 150px; margin: 0px 1%; text-align: center;}
+nav p {height: 70px; overflow: hidden; margin: 0px 20px;}
+nav p:last-child {background-color: cornflowerblue; color: white; vertical-align: center; margin: 0px;}

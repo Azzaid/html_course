@@ -1,0 +1,32 @@
+body {background-image: url("../images/starback.png"); background-position: top; background-repeat: no-repeat; color: aqua; background-color: #888888;}
+header {display: grid; grid-template-columns: 300px 1fr; text-align: center;}
+nav {display: grid;
+    grid-template-areas:
+            ". . . ab ab ."
+            ". . . . Game Game"
+            ". . . . Templates Templates"
+            ". . . Leader_table Leader_table ."
+            "Other_projects Other_projects Thanks_to Thanks_to . .";
+    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: repeat(6, 50px);
+    background-image: url("../images/Zlogo.png"); background-size: 70%; background-position: top left; background-repeat: no-repeat;}
+nav div {width: 100px; height: 50px; overflow: hidden; margin: 5px;}
+.octocorner {
+    position: relative;
+    top: -31px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.3);
+    transform: rotate(45deg);
+    overflow: visible;
+    margin: 0;
+}
+.octocorner p {transform: rotate(-45deg); position: relative; top: 33px;}
+
+.About {grid-area: ab}
+.Game {grid-area: Game}
+.Templates {grid-area: Templates}
+.Leader_table {grid-area: Leader_table}
+.Other_projects {grid-area: Other_projects}
+.Thanks_to {grid-area: Thanks_to}

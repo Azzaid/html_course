@@ -1,0 +1,6 @@
+.calculator {background-color: lightgrey; display: grid; grid-template-columns: repeat(3, 70px); grid-column-gap: 5px; grid-row-gap: 5px; border: solid black 2px;}
+.screen {border: solid black 2px; display: inline-block; background-color: white; grid-column-start: 1; grid-column-end: 4;}
+.screen input {border: none; background-color: white; margin: 0;}
+.screen input:focus {outline: none;}
+.button {border: solid black 2px; background-color: white; text-align: center;}
+.button:hover {outline: solid blueviolet 2px;}
