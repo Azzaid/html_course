@@ -3,6 +3,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: space-between;
+    background-image: url("../images/space.jpg");
 }
 
 .main_page_body {
@@ -11,7 +12,7 @@ body {
     display: grid;
     grid-template-rows: 270px auto auto 50px;
     grid-template-columns: 1fr 180px;
-    grid-row-gap: 10px;
+    grid-row-gap: 5px;
     grid-template-areas:
             "header header"
             "about banners"
@@ -162,10 +163,10 @@ section {
     max-width: 1200px;
     color: aqua;
     display: grid;
-    grid-template-rows: 265px 155px minmax(calc(325px),1150px) 155px 50px;
-    grid-template-columns: 155px minmax(325px,1150px) 155px;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+    grid-template-rows: 105px 160px minmax(calc(325px),1150px) 155px 50px;
+    grid-template-columns: 190px minmax(325px,1130px) 155px;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
     grid-template-areas:
             "header header header"
             ". top_toolbox ."
@@ -201,3 +202,22 @@ section {
     position: static;
 }
 .bone {background-color: #888888; width: 30px; height: 10px; transform-origin: top left; position: absolute;}
+
+.gratitues_page_body {
+    max-width: 850px;
+    color: aqua;
+    display: grid;
+    grid-template-rows: 215px minmax(calc(100vh - 300px), auto) 50px;
+    grid-template-columns: 245px minmax(325px,1130px);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "header header"
+            "links preview"
+            "footer footer";
+}
+
+.links_field {background-color: rgba(255, 255, 255, 0.3); grid-area:links; transform: skew(0,-45deg); transform-origin: right;}
+.links_field div {transform: skew(0,45deg); transform-origin: left;}
+.preview_field_wrap {background-color: rgba(255, 255, 255, 0.3); grid-area:preview;
+.preview_field_wrap iframe {height: 100%; width: 100%}
