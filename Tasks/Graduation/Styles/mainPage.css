@@ -1,14 +1,44 @@
-body {background-color: #888888; margin: 0;
-    display: flex; justify-content: space-between;}
-.main_body {max-width: 850px; color: aqua; display: grid; grid-template-rows: 270px 450px 1fr 50px; grid-template-columns: 1fr 180px; grid-row-gap: 10px}
-.main_body>img {position: absolute;}
-header {grid-column-start: 1; grid-column-end: 3; display: grid; grid-template-columns: 325px 30px 1fr 30px 20px; grid-template-rows: 105px 105px 50px; grid-row-gap: 5px;
+body {
+    background-color: #888888;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_page_body {
+    max-width: 850px;
+    color: aqua;
+    display: grid;
+    grid-template-rows: 270px auto auto 50px;
+    grid-template-columns: 1fr 180px;
+    grid-row-gap: 10px;
+    grid-template-areas:
+            "header header"
+            "about banners"
+            "watsnew banners"
+            "footer footer";
+}
+
+.main_page_body > img {
+
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 325px 30px 1fr 30px 20px;
+    grid-template-rows: 105px 105px 50px;
+    grid-row-gap: 5px;
     grid-template-areas:
             "nav1 . head1 head1 ."
             "nav1 . head2 head2 ."
             "nav1 head3 head3 . .";
-    text-align: center; position: relative;}
-nav {grid-area: nav1;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    grid-area: nav1;
     display: grid;
     grid-template-areas:
             ". . . ab ab ."
@@ -17,37 +47,157 @@ nav {grid-area: nav1;
             ". . . Leader_table Leader_table ."
             "Other_projects Other_projects Thanks_to Thanks_to . .";
     grid-template-rows: repeat(5, 50px);
-    grid-template-columns: repeat(6, 50px);
+    grid-template-columns: repeat(5, 50px);
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    background-image: url("../images/Zlogo.png"); background-size: 70%; background-position: top left; background-repeat: no-repeat;}
-.button {width: 100px; height: 50px; overflow: hidden;}
-.octocorner {
+    background-image: url("../images/Zlogo.png");
+    background-size: 70%;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+.button {
     position: relative;
-    top: -31px;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px
+}
+
+.button__small{
+    width: 50px;
+}
+
+.button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -15px;
     left: 10px;
     width: 80px;
     height: 80px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     transform: rotate(45deg);
     overflow: visible;
     margin: 0;
 }
-.octocorner p {transform: rotate(-45deg); position: relative; top: 33px;}
 
-.About {grid-area: ab}
-.Game {grid-area: Game}
-.Templates {grid-area: Templates}
-.Leader_table {grid-area: Leader_table}
-.Other_projects {grid-area: Other_projects}
-.Thanks_to {grid-area: Thanks_to}
-header>div:nth-child(n+2) {background-color: rgba(255,255,255,0.3);}
-header>div:nth-child(2) {transform: skew(45deg); transform-origin: bottom; grid-area: head1}
-header>div:nth-child(3) {transform: skew(-45deg); transform-origin: top; grid-area: head2}
-header>div:nth-child(4) {transform: skew(-45deg) translateX(-80px); transform-origin: top; grid-area: head3}
-h1 {transform: skew(-45deg);}
-header>div:nth-child(n+3) p {transform: skew(45deg);}
-section {background-color: rgba(255,255,255,0.3);}
+.button__small:after {
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+}
 
-.about {grid-column-start: 1; grid-column-end: 2;}
-.watsNew {grid-column-start: 1; grid-column-end: 2;}
+.About {
+    grid-area: ab
+}
+
+.Game {
+    grid-area: Game
+}
+
+.Templates {
+    grid-area: Templates
+}
+
+.Leader_table {
+    grid-area: Leader_table
+}
+
+.Other_projects {
+    grid-area: Other_projects
+}
+
+.Thanks_to {
+    grid-area: Thanks_to
+}
+
+header > :nth-child(n+2) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+header > :nth-child(2) {
+    transform: skew(45deg);
+    transform-origin: bottom;
+    grid-area: head1
+}
+
+header > div:nth-child(3) {
+    transform: skew(-45deg);
+    transform-origin: top;
+    grid-area: head2
+}
+
+header > div:nth-child(4) {
+    transform: skew(-45deg) translateX(-80px);
+    transform-origin: top;
+    grid-area: head3
+}
+
+h1 {
+    transform: skew(-45deg);
+}
+
+header > div:nth-child(n+3) p {
+    transform: skew(45deg);
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.about {
+    grid-area: about;
+}
+
+.watsNew {
+    grid-area: watsnew;
+}
+
+.game_page_body {
+    max-width: 1200px;
+    color: aqua;
+    display: grid;
+    grid-template-rows: 265px 155px minmax(calc(325px),1150px) 155px 50px;
+    grid-template-columns: 155px minmax(325px,1150px) 155px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-template-areas:
+            "header header header"
+            ". top_toolbox ."
+            "left_toolbox gamefield right_toolbox"
+            ". bottom_toolbox ."
+            "footer footer footer";
+}
+.tool_box {background-color: rgba(255, 255, 255, 0.3)}
+.tool_box__top {grid-area: top_toolbox; transform-origin: bottom; transform: skew(-45deg);}
+.tool_box__left {grid-area: left_toolbox; transform-origin: right; transform: skew(0, -45deg);}
+.tool_box__right {grid-area: right_toolbox; transform-origin: left; transform: skew(0, -45deg);}
+.tool_box__bottom {grid-area: bottom_toolbox; transform-origin: top; transform: skew(-45deg);}
+.game_field {grid-area: gamefield; background-color: rgba(115, 162, 239, 0.3); position: relative;}
+
+.tool_bar__top {
+    transform: skew(45deg) rotate(-90deg);
+}
+
+.tool_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.joint {
+    height: 30px;
+    width: 30px;
+    background-color: blueviolet;
+    position: absolute;
+}
+.joint__sample{
+    position: static;
+}
+.bone {background-color: #888888; width: 30px; height: 10px; transform-origin: top left; position: absolute;}

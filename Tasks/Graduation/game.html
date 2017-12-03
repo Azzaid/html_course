@@ -3,17 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Game</title>
-    <link href="Styles/mainPage.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Styles/mainPage.css">
 </head>
 <body>
-<div id="sample"></div>
-<div id="toolBar" class="tool_bar">
-    <div id="samplejoint" class="joint" draggable="true" ondragstart="game.takeElement(event)"></div>
-    <div id="startButton" class="start_button" onclick="game.startSim()">START</div>
-    <div id="stopButton" class="stop_button" onclick="game.stopSim()">STOP</div>
-    <div class="clearfix"></div>
+<div class="space_left"></div>
+<div class="game_page_body">
+    <header>
+        <nav>
+            <a class="About button"  href="index.html">Что это?</a>
+            <a class="Game button" href="game.html">Ишрать</a>
+            <a class="Templates button">Конструкции</a>
+            <a class="Leader_table button">Лидеры</a>
+            <a class="Other_projects button">Другие игры</a>
+            <a class="Thanks_to button">Спасибы</a>
+
+        </nav>
+        <div>
+            <h1>
+                Космический генезис
+            </h1>
+        </div>
+    </header>
+    <div id="topToolBox" class="tool_box tool_box__top">
+        <div id="mainToolBar" class="tool_bar tool_bar__top">
+            <div id="samplejoint" class="joint joint__sample" draggable="true" ondragstart="game.takeElement(event)"></div>
+            <div id="startButton" class="button" onclick="game.startSim()">START</div>
+            <div id="stopButton" class="button" onclick="game.stopSim()">STOP</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div id="bottomToolBox" class="tool_box tool_box__bottom"></div>
+    <div id="leftToolBox" class="tool_box tool_box__left"></div>
+    <div id="rightToolBox" class="tool_box tool_box__right"></div>
+
+    <div id="gameField" class="game_field" ondrop="game.addElement2(event)" ondragover="game.allowDrop(event)"><div class="ground"></div></div>
 </div>
-<div id="gameField" class="game_field" ondrop="game.addElement2(event)" ondragover="game.allowDrop(event)"><div class="ground"></div></div>
+<div class="space_left"></div>
+
 <script src="Scripts/GameEngine.js"></script>
 </body>
 </html>
