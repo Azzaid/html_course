@@ -4,11 +4,13 @@ body {
     display: flex;
     justify-content: space-between;
     background-image: url("../images/space.jpg");
+    color: yellow;
 }
+a {color: yellow; text-decoration: none}
+a:visited {color: darkgoldenrod; text-decoration: none}
 
 .main_page_body {
     max-width: 850px;
-    color: aqua;
     display: grid;
     grid-template-rows: 270px auto auto 50px;
     grid-template-columns: 1fr 180px;
@@ -20,9 +22,6 @@ body {
             "footer footer";
 }
 
-.main_page_body > img {
-
-}
 
 header {
     grid-area: header;
@@ -161,10 +160,9 @@ section {
 
 .game_page_body {
     max-width: 1200px;
-    color: aqua;
     display: grid;
-    grid-template-rows: 105px 160px minmax(calc(325px),1150px) 155px 50px;
-    grid-template-columns: 190px minmax(325px,1130px) 155px;
+    grid-template-rows: 105px 160px minmax(calc(325px),630px) 155px 50px;
+    grid-template-columns: 190px minmax(325px,1150px) 155px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     grid-template-areas:
@@ -182,7 +180,7 @@ section {
 .game_field {grid-area: gamefield; background-color: rgba(115, 162, 239, 0.3); position: relative;}
 
 .tool_bar__top {
-    transform: skew(45deg) rotate(-90deg);
+    transform:skew(45deg) rotate(-90deg);
 }
 
 .tool_bar {
@@ -205,7 +203,6 @@ section {
 
 .gratitues_page_body {
     max-width: 850px;
-    color: aqua;
     display: grid;
     grid-template-rows: 215px minmax(calc(100vh - 300px), auto) 50px;
     grid-template-columns: 245px minmax(325px,1130px);
@@ -219,5 +216,56 @@ section {
 
 .links_field {background-color: rgba(255, 255, 255, 0.3); grid-area:links; transform: skew(0,-45deg); transform-origin: right;}
 .links_field div {transform: skew(0,45deg); transform-origin: left;}
-.preview_field_wrap {background-color: rgba(255, 255, 255, 0.3); grid-area:preview;
+.preview_field_wrap {background-color: rgba(255, 255, 255, 0.3); grid-area:preview;}
 .preview_field_wrap iframe {height: 100%; width: 100%}
+
+.templates_page_body {
+    max-width: 1200px;
+    display: grid;
+    grid-template-rows: 270px 300px 300px 50px;
+    grid-row-gap: 5px;
+    grid-template-areas:
+            "header"
+            "bodys"
+            "legs"
+            "footer";
+}
+
+.body_templater {
+    grid-area: bodys;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: skew(-25deg);
+    transform-origin: top;
+}
+
+.legs_templater {
+    grid-area: legs;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: skew(25deg);
+    transform-origin: top;
+}
+
+.leaderboard_page_body {
+    max-width: 850px;
+    display: grid;
+    grid-template-rows: 105px 200px auto 50px;
+    grid-template-columns: 250px minmax(325px,1130px) 20px;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    grid-template-areas:
+            "header header ."
+            ". detailed ."
+            ". table ."
+            "footer footer footer";
+}
+
+.detailed_screen{
+    background-color: rgba(255, 255, 255, 0.3);
+    grid-area: detailed;
+    transform: skew(-45deg);
+}
+
+.score_table{
+    background-color: rgba(255, 255, 255, 0.3);
+    grid-area: table;
+}
