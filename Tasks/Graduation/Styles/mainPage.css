@@ -13,8 +13,9 @@ a:visited {color: darkgoldenrod; text-decoration: none}
     max-width: 850px;
     display: grid;
     grid-template-rows: 270px auto auto 50px;
-    grid-template-columns: 1fr 180px;
+    grid-template-columns: 1fr 155px;
     grid-row-gap: 5px;
+    grid-column-gap: 5px;
     grid-template-areas:
             "header header"
             "about banners"
@@ -26,34 +27,36 @@ a:visited {color: darkgoldenrod; text-decoration: none}
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 325px 30px 1fr 30px 20px;
+    grid-template-columns: 210px 105px 40px 1fr 45px;
     grid-template-rows: 105px 105px 50px;
     grid-row-gap: 5px;
     grid-template-areas:
-            "nav1 . head1 head1 ."
-            "nav1 . head2 head2 ."
-            "nav1 head3 head3 . .";
+            "nav1 nav1 . head1 head1"
+            "nav1 nav1 . head2 head2"
+            "nav1 nav1 head3 head3 .";
     text-align: center;
     position: relative;
+    background-image: url("../images/Zlogo.png");
+    background-size: 220px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
 nav {
+    width: 320px;
     grid-area: nav1;
     display: grid;
     grid-template-areas:
-            ". . . ab ab ."
-            ". . . . Game Game"
-            ". . . . Templates Templates"
-            ". . . Leader_table Leader_table ."
-            "Other_projects Other_projects Thanks_to Thanks_to . .";
+            ". . navplace1 navplace1 ."
+            ". . . navplace2 navplace2"
+            ". . . navplace3 navplace3"
+            ". . navplace4 navplace4 ."
+            "navplace6 navplace5 navplace5 . .";
     grid-template-rows: repeat(5, 50px);
-    grid-template-columns: repeat(5, 50px);
+    grid-template-columns: 100px repeat(4, 50px);
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-    background-image: url("../images/Zlogo.png");
-    background-size: 70%;
-    background-position: top left;
-    background-repeat: no-repeat;
 }
 
 .button {
@@ -92,32 +95,36 @@ nav {
     height: 80px;
 }
 
-.About {
-    grid-area: ab
+.navplace1 {
+    grid-area:  navplace1
 }
 
-.Game {
-    grid-area: Game
+.navplace2 {
+    grid-area: navplace2
 }
 
-.Templates {
-    grid-area: Templates
+.navplace3 {
+    grid-area: navplace3
 }
 
-.Leader_table {
-    grid-area: Leader_table
+.navplace4 {
+    grid-area: navplace4
 }
 
-.Other_projects {
-    grid-area: Other_projects
+.navplace5 {
+    grid-area: navplace5
 }
 
-.Thanks_to {
-    grid-area: Thanks_to
+.navplace6 {
+    grid-area: navplace6
 }
 
 header > :nth-child(n+2) {
     background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 7%;
 }
 
 header > :nth-child(2) {
@@ -133,7 +140,7 @@ header > div:nth-child(3) {
 }
 
 header > div:nth-child(4) {
-    transform: skew(-45deg) translateX(-80px);
+    transform: skew(-45deg) translateX(-65px);
     transform-origin: top;
     grid-area: head3
 }
@@ -144,6 +151,7 @@ h1 {
 
 header > div:nth-child(n+3) p {
     transform: skew(45deg);
+    margin: 0;
 }
 
 section {
@@ -156,6 +164,58 @@ section {
 
 .watsNew {
     grid-area: watsnew;
+}
+
+.banners {background-color: rgba(255, 255, 255, 0.3); grid-area: banners; transform-origin: left; transform: skew(0, -45deg); display: flex; justify-content: space-around; flex-direction: column;}
+.banners>* {transform-origin:left; transform: skew(0, 45deg); flex-basis: 100px; flex-grow: 1;}
+
+@media all and (max-width:580px) {
+    header {
+        grid-template-areas:
+                ". head1 head1 head1 head1"
+                "nav1 nav1 head2 head2 head2"
+                "nav1 nav1 head3 head3 head3";
+    }
+    nav {
+        grid-template-areas:
+                ". . navplace1"
+                ". . navplace2"
+                "navplace5 navplace4 navplace3";
+        grid-template-rows: repeat(3, 50px);
+        grid-template-columns: repeat(3, 100px);
+    }
+    header > div:nth-child(n+3) {
+        transform: skew(0deg);
+    }
+    header > div:nth-child(n+3) p {
+        transform: skew(0deg);
+    }
+    .main_page_body {
+        grid-template-areas:
+                "header header"
+                "about about"
+                "watsnew watsnew"
+                "footer footer";
+    }
+    .banners {display: none}
+}
+
+@media all and (max-width:450px) {
+    header {
+        grid-template-areas:
+                "head1"
+                "nav1";
+        grid-template-columns: 1fr;
+        grid-template-rows: 105px 105px;
+        background-size: 150px;
+        background-position: top 87px left;
+    }
+    nav {
+        justify-self: end;
+    }
+    header > div:nth-child(n+3) {
+        display: none;
+    }
 }
 
 .game_page_body {
