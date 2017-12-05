@@ -4,8 +4,11 @@ body {
     display: flex;
     justify-content: space-between;
     background-image: url("../images/space.jpg");
-    color: yellow;
+    color: white;
 }
+
+.underlay {position: absolute; width: 100vw; height: 100vh; z-index: 3}
+
 a {color: yellow; text-decoration: none}
 a:visited {color: darkgoldenrod; text-decoration: none}
 
@@ -40,7 +43,18 @@ header {
     background-size: 220px;
     background-position: top left;
     background-repeat: no-repeat;
-    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(90deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
 }
 
 nav {
@@ -86,6 +100,8 @@ nav {
     overflow: visible;
     margin: 0;
 }
+.button:after:after {display: block; width: 80px;
+    height: 80px; background-image: url("../images/redButton.png")}
 
 .button__small:after {
     position: absolute;
@@ -128,18 +144,22 @@ header > :nth-child(n+2) {
 }
 
 header > :nth-child(2) {
+    transition: transform 1s;
     transform: skew(45deg);
     transform-origin: bottom;
     grid-area: head1
 }
 
 header > div:nth-child(3) {
+    transition: transform 1s;
     transform: skew(-45deg);
     transform-origin: top;
     grid-area: head2
 }
 
 header > div:nth-child(4) {
+    transition: transform 1s;
+    transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
     transform: skew(-45deg) translateX(-65px);
     transform-origin: top;
     grid-area: head3
@@ -160,10 +180,14 @@ section {
 
 .about {
     grid-area: about;
+    transition: width 1s;
+    transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
 }
 
 .watsNew {
     grid-area: watsnew;
+    transition: width 1s;
+    transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
 }
 
 .banners {background-color: rgba(255, 255, 255, 0.3); grid-area: banners; transform-origin: left; transform: skew(0, -45deg); display: flex; justify-content: space-around; flex-direction: column;}
