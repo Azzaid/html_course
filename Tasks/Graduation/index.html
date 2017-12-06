@@ -4,97 +4,39 @@
     <meta charset="UTF-8">
     <title>Robotica</title>
     <link rel="stylesheet" type="text/css" href="Styles/mainPage.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-
-<div class="space_left"></div>
-<div class="main_page_body">
-
     <!--<img src="images/starback.png">!-->
-    <header>
-        <nav>
-            <a class="button navplace1"  href="index.html">Что это?</a>
-            <a class="button navplace2" href="game.html">Играть</a>
-            <a class="button navplace3" href="Templates.html">Примеры</a>
-            <a class="button navplace4" href="Leaderboard.html">Лидеры</a>
-            <a class="button navplace5" href="gratitues.html">Благодарность</a>
+    <div class="main_page_body">
+        <header>
+            <nav>
+                <div class="slider_button navplace1"><div class="button button__cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
+                <a class="button navplace2" href="game.html">Играть</a>
+                <a class="button navplace3" href="Templates.html">Примеры</a>
+                <a class="button navplace4" href="Leaderboard.html">Лидеры</a>
+                <a class="button navplace5" href="gratitues.html">Благодарность</a>
+            </nav>
+            <div class="technoframe">
+                <img class="technoframe__left_bot_corner" src="images/bottom_frame.png">
+                <img class="technoframe__right_top_corner" src="images/frameTop.png">
+                <h1>
+                    Робостройка
+                </h1>
+            </div>
+            <div>
+                <p>Твори, играй, эволюционируй</p>
+                <p>И не забудь почистить зубы</p>
+            </div>
+            <div>
+                <p>Адаптивность грядёт.</p>
+            </div>
+        </header>
+    </div>
 
-        </nav>
-        <div>
-            <h1>
-                Робостройка
-            </h1>
-        </div>
-        <div>
-            <p>Твори, играй, эволюционируй</p>
-            <p>И не забудь почистить зубы</p>
-        </div>
-        <div>
-            <p>Адаптивность грядёт.</p>
-        </div>
-    </header>
-
-    <section class="about">
-        <h2>Об игре</h2>
-        <article>
-            <h2>
-                Что тут происходит??
-            </h2>
-            <p>
-                Ты строишь робота!
-            </p>
-            <p>
-                Твоя модель слегка плоская и немного не в ладах с гравитацией но это твой собственный робот. Собери его. Научи ходить, ползать, и прыгать. А потом разбери и собери снова.
-            </p>
-        </article>
-        <article>
-            <h2>
-                Как в это играть?
-            </h2>
-            <p>
-                Вверху экрана ты видишь фиолетовый ккуб. Это сустав. Перетащи его на игровое поле чтобы создать новый сустав. Перетащи один сустав к другому чтобы соединить их костью. Нажми на кнопку старт чтобы начать симуляцию и увидеть как твоё существо двигается.
-            </p>
-            <p>Я пока не доделал гравитацию. Но это временное состояние.</p>
-        </article>
-    </section>
-
-    <section class="watsNew">
-        <h2>Обновления</h2>
-        <article>
-            <h2>03.12.07 21.53</h2>
-            <p>Закончил грубый набросок всех страниц. Теперь адаптивность на очереди.</p>
-            <h2>03.12.07 19.08</h2>
-            <p>Экран с благодарностями теперь благодарит. Хотя вот сайт it-akademy отобразить не смог. Говорит у меня jQuery нет. Ну нет. Доберусь до украшений и будет.</p>
-            <h2>03.12.07 15.40</h2>
-            <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
-            <h2>Привет Сергей</h2>
-            <p>
-                Если ты это читаешь значит у тебя есть ногти. Иначе ты бы был такой типа:"Ой да нафиг эти буквы! Где блин мои ногти чувак?"
-            </p>
-            <h2>Сегодня я понял что нужен новый бэкграунд</h2>
-            <p>
-                Старый резко обрывается по ширине.
-            </p>
-            <h2>Сегодня я поправил главную страницу</h2>
-            <p>
-                Теперь сайт капельку адаптивный.
-            </p>
-            <h2>Сегодня я сделал этот сайт.</h2>
-            <p>
-                Графитация немного хворает да и дизайн калечный но подождите до четверга....
-            </p>
-        </article>
-    </section>
-    <section class="banners">
-        <div>Черепашки лучший сайт рунета!</div>
-        <div>Черепашки лучший сайт рунета!</div>
-        <div>Черепашки лучший сайт рунета!</div>
-    </section>
-</div>
-<div class="space_right"></div>
 <canvas id="shineUnderCursor" class="underlay"></canvas>
 <script src="Scripts/APIs/TweenLite.js"></script>
 <script src="Scripts/connectionsDrawer.js"></script>
-
 </body>
 </html>
