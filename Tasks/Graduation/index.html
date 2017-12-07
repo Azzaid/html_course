@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <!--<img src="images/starback.png">!-->
-    <div class="main_page_body">
+    <div class="page_wrapper">
+        <!--<img src="images/Transformer.png">!-->
         <header>
             <nav>
                 <div class="slider_button navplace1"><div class="button button__cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
@@ -18,19 +18,51 @@
                 <a class="button navplace4" href="Leaderboard.html">Лидеры</a>
                 <a class="button navplace5" href="gratitues.html">Благодарность</a>
             </nav>
-            <div class="technoframe">
-                <img class="technoframe__left_bot_corner" src="images/bottom_frame.png">
-                <img class="technoframe__right_top_corner" src="images/frameTop.png">
+            <a class="headerplace1 technoframe" href="game.html">
+                <!--<img class="technoframe__left_bot_corner" src="images/bottom_frame.png">!-->
+                <!--<img class="technoframe__right_top_corner" src="images/frameTop.png">!-->
                 <h1>
                     Робостройка
                 </h1>
+            </a>
+            <div class="headerplace2 technoframe">
+
+                <p>Инженеры оценят</p>
+                <p>смертные пройдут мимо</p>
             </div>
-            <div>
-                <p>Твори, играй, эволюционируй</p>
-                <p>И не забудь почистить зубы</p>
-            </div>
-            <div>
-                <p>Адаптивность грядёт.</p>
+            <div class="headerplace3 technoframe" id="newsBlock" onclick="newsBlock.togle()">
+                <div onclick="newsBlock.nextNews()"></div>
+                <div>Новый дизайн. Хотите знать больше?</div>
+                <div class="newsPost">
+                    <h2>Будущее</h2>
+                    <p>Я наверное сделаю что-то прекрасное но об этом узнаем потом.</p>
+                </div>
+                <div class="newsPost">
+                    <h2>03.12.07 21.53</h2>
+                    <p>Закончил грубый набросок всех страниц. Теперь адаптивность на очереди.</p>
+                </div>
+                <div class="newsPost">
+                    <h2>03.12.07 19.08</h2>
+                    <p>Экран с благодарностями теперь благодарит. Хотя вот сайт it-akademy отобразить не смог. Говорит у меня jQuery нет. Ну нет. Доберусь до украшений и будет.</p>
+                </div>
+                <div class="newsPost">
+                    <h2>03.12.07 15.40</h2>
+                    <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
+                </div>
+                <div class="newsPost">
+                    <h2>Сегодня я поправил главную страницу</h2>
+                    <p>Теперь сайт капельку адаптивный.</p>
+                </div>
+                <div class="newsPost">
+                    <h2>03.12.07 15.40</h2>
+                    <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
+                </div>
+                <div class="newsPost">
+                    <h2>Прошлое</h2>
+                    <p>Здесь водились драконы и динозавры.</p>
+                </div>
+                <div onclick="newsBlock.prevNews()"></div>
+                <div class="newsPost"></div>
             </div>
         </header>
     </div>
@@ -38,5 +70,6 @@
 <canvas id="shineUnderCursor" class="underlay"></canvas>
 <script src="Scripts/APIs/TweenLite.js"></script>
 <script src="Scripts/connectionsDrawer.js"></script>
+    <script src="Scripts/mainPageEngine.js"></script>
 </body>
 </html>

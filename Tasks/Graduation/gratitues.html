@@ -6,36 +6,40 @@
     <link rel="stylesheet" type="text/css" href="Styles/mainPage.css">
 </head>
 <body>
-<div class="space_left"></div>
-<div class="gratitues_page_body">
-<header>
-    <nav>
-        <a class="About button"  href="index.html">Что это?</a>
-        <a class="Game button" href="game.html">Играть</a>
-        <a class="Templates button">Примеры</a>
-        <a class="Leader_table button">Лидеры</a>
-        <a class="Thanks_to button">Благодарность</a>
-    </nav>
-    <div>
-        <h1>
-            Робостройка
-        </h1>
+<div class = page_wrapper>
+    <div class="gratitues_page_body">
+        <header>
+            <nav>
+                <div class="slider_button navplace1"><div class="button button__cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
+                <a class="button navplace2" href="game.html">Играть</a>
+                <a class="button navplace3" href="Templates.html">Примеры</a>
+                <a class="button navplace4" href="Leaderboard.html">Лидеры</a>
+                <a class="button navplace5" href="gratitues.html">Благодарность</a>
+            </nav>
+            <a class="technoframe" href="game.html">
+                <!--<img class="technoframe__left_bot_corner" src="images/bottom_frame.png">!-->
+                <!--<img class="technoframe__right_top_corner" src="images/frameTop.png">!-->
+                <h1>
+                    Робостройка
+                </h1>
+            </a>
+            <div class="technoframe">
+
+                <p>Инженеры оценят</p>
+                <p>смертные пройдут мимо</p>
+            </div>
+        </header>
+        <div  class="links_field technoframe">
+            <div><a href="https://learn.javascript.ru/" onmouseenter="showPreview(event)" id="link0">Этим ребятам за джаваскрипт</a></div>
+            <div><a href="https://learn.javascript.ru/" id="link1"  onmouseenter="showPreview(event)">Lllhj</a></div>
+            <div><a >Этим</a></div>
+            <div><a >Этим</a></div>
+            <div><a >Этим</a></div>
+        </div>
+        <a class="preview_field technoframe" id="previewField"></a>
     </div>
-    <div>
-        <p>Большое спасибо всем ресурсам без которых я бы провозился намного дольше</p>
-    </div>
-</header>
-    <div class="links_field">
-        <div><a href="https://learn.javascript.ru/" onmouseenter="showPreview(event)" onmouseleave="hidePreview()">Этим ребятам за джаваскрипт</a></div>
-        <div><a >Этим</a></div>
-        <div><a >Этим</a></div>
-        <div><a >Этим</a></div>
-        <div><a >Этим</a></div>
-    </div>
-    <div class="preview_field_wrap"><iframe src="//ru.wiktionary.org/wiki/%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C" class="preview_field" id="previewField"></iframe></div>
 </div>
-<div class="space_left"></div>
+
 <script src="Scripts/Previewer.js"></script>
-<div class="space_left"></div>
 </body>
 </html>

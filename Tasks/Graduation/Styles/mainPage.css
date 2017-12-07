@@ -12,10 +12,10 @@ body {
 
 .underlay {position: absolute; top:0; left: 0; width: 100vw; height: 100vh;}
 
-a {color: yellow; text-decoration: none;}
-a:visited {color: darkgoldenrod; text-decoration: none}
+a {color: white; text-decoration: none;}
+a:visited {color: white; text-decoration: none}
 
-.technoframe {border: solid 1px rgb(2,171,254); border-left: solid 3px darkgray; position: relative;
+.technoframe {z-index:4; border: solid 1px rgb(2,171,254); border-left: solid 3px darkgray; position: relative;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+68,7db9e8+75,7db9e8+75,1e5799+100,1e5799+100&0+0,1+100 */
     background: -moz-linear-gradient(-45deg, rgba(125,185,232,0) 0%, rgba(125,185,232,0.68) 68%, rgba(125,185,232,0.75) 75%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg, rgba(125,185,232,0) 0%,rgba(125,185,232,0.68) 68%,rgba(125,185,232,0.75) 75%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -23,11 +23,17 @@ a:visited {color: darkgoldenrod; text-decoration: none}
 .technoframe__left_bot_corner {position: absolute; bottom:-3px; left:50px; width: 150px;}
 .technoframe__right_top_corner {position: absolute; top:-3px; left:-73px; width: 200px;}
 
+.technoframe:hover {
+    -webkit-box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
+    -moz-box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
+    box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
+}
 
-.main_page_body {
+.page_wrapper {
     width: 100vw;
     height: 100vh;
     margin: 0;
+    padding: 5px;
     background-image: url("../images/space.jpg");
     color: white;
     font-family: 'Jura', sans-serif;
@@ -36,31 +42,17 @@ a:visited {color: darkgoldenrod; text-decoration: none}
     align-items: center;
 }
 
-/*.main_page_body {
-    max-width: 850px;
-    display: grid;
-    grid-template-rows: 270px auto auto 50px;
-    grid-template-columns: 1fr 155px;
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
-    grid-template-areas:
-            "header header"
-            "about banners"
-            "watsnew banners"
-            "footer footer";
-}*/
-
-
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 210px 105px 40px minmax(10px,500px) 45px;
-    grid-template-rows: 105px 105px 50px;
+    grid-template-columns: 5px 205px 110px 40px minmax(0px, 450px) 30px;
+    grid-template-rows: 100px 100px 50px 1fr;
     grid-row-gap: 5px;
     grid-template-areas:
-            "nav1 nav1 . head1 head1"
-            "nav1 nav1 . head2 head2"
-            "nav1 nav1 head3 head3 .";
+            ". nav nav . head1 ."
+            ". nav nav . head2 ."
+            ". nav nav . head3 ."
+            ". . . . head3 .";
     text-align: center;
     position: relative;
     background-image: url("../images/Zlogo.png");
@@ -83,7 +75,7 @@ header {
 
 nav {
     width: 320px;
-    grid-area: nav1;
+    grid-area: nav;
     display: grid;
     grid-template-areas:
             ". . navplace1 navplace1 ."
@@ -178,41 +170,41 @@ nav {
 }
 
 header > :nth-child(n+2) {
-    background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 0 7%;
+    transition: transform, height 1s;
+    transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
 }
 
-header > :nth-child(2) {
-    transition: transform 1s;
+.headerplace1 {
     transform: skew(45deg);
     transform-origin: bottom;
     grid-area: head1
 }
 
-header > :nth-child(2)>* {transform: skew(-45deg);}
+.headerplace1>* {transform: skew(-45deg);}
 
-header > div:nth-child(3) {
-    transition: transform 1s;
-    transform: skew(-45deg);
+.headerplace2, .headerplace3 {
     transform-origin: top;
+}
+
+.headerplace2>*, .headerplace3>*{
+    transform: skew(45deg);
+}
+
+.headerplace2 {
+    transform: skew(-45deg);
     grid-area: head2
 }
 
-header > div:nth-child(4) {
-    transition: transform 1s;
-    transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
+.headerplace3 {
     transform: skew(-45deg) translateX(-65px);
-    transform-origin: top;
     grid-area: head3
 }
 
-header > div:nth-child(n+3) p {
-    transform: skew(45deg);
-    margin: 0;
-}
+
 
 section {
     background-color: rgba(255, 255, 255, 0.3);
@@ -233,54 +225,53 @@ section {
 .banners {background-color: rgba(255, 255, 255, 0.3); grid-area: banners; transform-origin: left; transform: skew(0, -45deg); display: flex; justify-content: space-around; flex-direction: column;}
 .banners>* {transform-origin:left; transform: skew(0, 45deg); flex-basis: 100px; flex-grow: 1;}
 
-@media all and (max-width:580px) {
-    header {
-        grid-template-areas:
-                ". head1 head1 head1 head1"
-                "nav1 nav1 head2 head2 head2"
-                "nav1 nav1 head3 head3 head3";
-    }
-    nav {
-        grid-template-areas:
-                ". . navplace1"
-                ". . navplace2"
-                "navplace5 navplace4 navplace3";
-        grid-template-rows: repeat(3, 50px);
-        grid-template-columns: repeat(3, 100px);
-    }
-    header > div:nth-child(n+3) {
-        transform: skew(0deg);
-    }
-    header > div:nth-child(n+3) p {
-        transform: skew(0deg);
-    }
-    .main_page_body {
-        grid-template-areas:
-                "header header"
-                "about about"
-                "watsnew watsnew"
-                "footer footer";
-    }
-    .banners {display: none}
+.expanded{
+    position: relative;
+    transform: skewX(0deg) translateX(-65px);
+    transform-origin: top;
+    height: auto;
 }
 
-@media all and (max-width:450px) {
-    header {
-        grid-template-areas:
-                "head1"
-                "nav1";
-        grid-template-columns: 1fr;
-        grid-template-rows: 105px 105px;
-        background-size: 150px;
-        background-position: top 87px left;
-    }
-    nav {
-        justify-self: end;
-    }
-    header > div:nth-child(n+3) {
-        display: none;
-    }
+.expanded>div:first-child{
+    position:absolute;
+    top:5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/arrow.png");
+    background-size: cover;
+    z-index: 4;
 }
+
+.expanded>div:last-child{
+    position:absolute;
+    bottom:5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/arrow.png");
+    background-size: cover;}
+
+.expanded>*{
+    transform: skewX(0deg);
+}
+
+.newsPost {display: none}
+
+.newsPost__next {
+    display: block;
+    max-height: 100px;
+    overflow: hidden;
+}
+.newsPost__current{
+    display: block;
+}
+.newsPost__prev {
+    display: block;
+    max-height: 200px;
+    overflow: hidden;
+}
+
 
 .game_page_body {
     max-width: 1200px;
@@ -326,22 +317,19 @@ section {
 .bone {background-color: #888888; width: 30px; height: 10px; transform-origin: top left; position: absolute;}
 
 .gratitues_page_body {
-    max-width: 850px;
+    max-width: 900px;
     display: grid;
-    grid-template-rows: 215px minmax(calc(100vh - 300px), auto) 50px;
-    grid-template-columns: 245px minmax(325px,1130px);
-    grid-row-gap: 5px;
+    grid-template-rows: 270px 1fr;
+    grid-template-columns: 250px 1fr;
     grid-column-gap: 5px;
     grid-template-areas:
             "header header"
-            "links preview"
-            "footer footer";
+            "links preview";
 }
 
-.links_field {background-color: rgba(255, 255, 255, 0.3); grid-area:links; transform: skew(0,-45deg); transform-origin: right;}
+.links_field {grid-area:links; transform: skew(0,-45deg); transform-origin: right;}
 .links_field div {transform: skew(0,45deg); transform-origin: left;}
-.preview_field_wrap {background-color: rgba(255, 255, 255, 0.3); grid-area:preview;}
-.preview_field_wrap iframe {height: 100%; width: 100%}
+.preview_field {grid-area:preview; height: 50vh; width: 50vh;}
 
 .templates_page_body {
     max-width: 1200px;
@@ -392,4 +380,56 @@ section {
 .score_table{
     background-color: rgba(255, 255, 255, 0.3);
     grid-area: table;
+}
+
+
+
+@media all and (max-width:610px) {
+    header {
+        grid-template-areas:
+                ". . head1 head1 head1 ."
+                ". nav nav head2 head2 ."
+                ". nav nav head3 head3 ."
+                ". . . head3 head3 .";
+    }
+    nav {
+        grid-template-areas:
+                ". . navplace1"
+                ". . navplace2"
+                "navplace5 navplace4 navplace3";
+        grid-template-rows: repeat(3, 50px);
+        grid-template-columns: repeat(3, 100px);
+    }
+    header > div:nth-child(n+3) {
+        transform: skew(0deg);
+    }
+    header > div:nth-child(n+3) p {
+        transform: skew(0deg);
+    }
+    .main_page_body {
+        grid-template-areas:
+                "header header"
+                "about about"
+                "watsnew watsnew"
+                "footer footer";
+    }
+    .banners {display: none}
+}
+
+@media all and (max-width:500px) {
+    header {
+        grid-template-areas:
+                ". head1 head1 head1 head1 ."
+                ". nav nav . . ."
+                ". nav nav . . ."
+                ". . . head3 head3 .";
+        background-size: 150px;
+        background-position: top 87px left;
+    }
+    nav {
+        justify-self: end;
+    }
+    header > div:nth-child(n+3) {
+        display: none;
+    }
 }

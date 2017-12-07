@@ -206,6 +206,7 @@ class Bone {
         this.domObj.style.OTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
         this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
         this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
+
         kd("bone position","rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")");
 
         this.domObj.style.top = (this.joints[0].currentY+jointHeight/2).toString() + "px";
