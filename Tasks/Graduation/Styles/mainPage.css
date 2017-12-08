@@ -1,13 +1,15 @@
 
 
 body {
-    /*background-color: #888888;
+    overflow-x: hidden;
     margin: 0;
     background-image: url("../images/space.jpg");
     color: white;
     font-family: 'Jura', sans-serif;
-    font-family: 'Press Start 2P', cursive;*/
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*font-family: 'Press Start 2P', cursive;*/
 }
 
 .underlay {position: absolute; top:0; left: 0; width: 100vw; height: 100vh;}
@@ -15,13 +17,11 @@ body {
 a {color: white; text-decoration: none;}
 a:visited {color: white; text-decoration: none}
 
-.technoframe {z-index:4; border: solid 1px rgb(2,171,254); border-left: solid 3px darkgray; position: relative;
+.technoframe {z-index:4; border-radius: 30px; border: solid 1px rgb(30,87,153); border-left: solid 3px darkgray; position: relative;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+68,7db9e8+75,7db9e8+75,1e5799+100,1e5799+100&0+0,1+100 */
     background: -moz-linear-gradient(-45deg, rgba(125,185,232,0) 0%, rgba(125,185,232,0.68) 68%, rgba(125,185,232,0.75) 75%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg, rgba(125,185,232,0) 0%,rgba(125,185,232,0.68) 68%,rgba(125,185,232,0.75) 75%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, rgba(125,185,232,0) 0%,rgba(125,185,232,0.68) 68%,rgba(125,185,232,0.75) 75%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */}
-.technoframe__left_bot_corner {position: absolute; bottom:-3px; left:50px; width: 150px;}
-.technoframe__right_top_corner {position: absolute; top:-3px; left:-73px; width: 200px;}
 
 .technoframe:hover {
     -webkit-box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
@@ -29,48 +29,23 @@ a:visited {color: white; text-decoration: none}
     box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
 }
 
-.page_wrapper {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 5px;
-    background-image: url("../images/space.jpg");
-    color: white;
-    font-family: 'Jura', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 5px 205px 110px 40px minmax(0px, 450px) 30px;
+    grid-template-columns: 5px 205px 110px 40px minmax(0px, 450px);
     grid-template-rows: 100px 100px 50px 1fr;
-    grid-row-gap: 5px;
+    grid-row-gap: 10px;
     grid-template-areas:
-            ". nav nav . head1 ."
-            ". nav nav . head2 ."
-            ". nav nav . head3 ."
-            ". . . . head3 .";
+            ". nav nav . head1"
+            ". nav nav . head2"
+            ". nav nav . head3"
+            ". . . . head3";
     text-align: center;
     position: relative;
     background-image: url("../images/Zlogo.png");
     background-size: 220px;
     background-position: top left;
     background-repeat: no-repeat;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(90deg)
-    }
-    100% {
-        transform: rotate(180deg)
-    }
 }
 
 nav {
@@ -123,6 +98,18 @@ nav {
     transform: translateX(-100px);
 }
 
+.slider_button_cover {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    background-image: url("../images/metal_cower.jpg");
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
 .covered_button{
     display: block;
     position: relative;
@@ -133,8 +120,8 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-image: url("../images/redButton.png");
-    z-index: 1;
+    background-image: url("../images/blue_button_2.png");
+    z-index: 0;
 }
 
 .button__small:after {
@@ -200,7 +187,7 @@ header > :nth-child(n+2) {
 }
 
 .headerplace3 {
-    transform: skew(-45deg) translateX(-65px);
+    transform: skew(-45deg) translateX(-100px);
     grid-area: head3
 }
 
@@ -227,7 +214,7 @@ section {
 
 .expanded{
     position: relative;
-    transform: skewX(0deg) translateX(-65px);
+    transform: skewX(0deg) translateX(-100px);
     transform-origin: top;
     height: auto;
 }
@@ -272,27 +259,27 @@ section {
     overflow: hidden;
 }
 
-
 .game_page_body {
     max-width: 1200px;
     display: grid;
-    grid-template-rows: 105px 160px minmax(calc(325px),630px) 155px 50px;
-    grid-template-columns: 190px minmax(325px,1150px) 155px;
+    grid-template-rows: 215px 120px minmax(325px,630px) 120px 50px;
+    grid-template-columns: 15px 120px minmax(325px,630px) 120px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     grid-template-areas:
-            "header header header"
-            ". top_toolbox ."
-            "left_toolbox gamefield right_toolbox"
-            ". bottom_toolbox ."
-            "footer footer footer";
+            "header header header header"
+            ". . top_toolbox ."
+            "left_toolbox left_toolbox gamefield right_toolbox"
+            ". . bottom_toolbox ."
+            "footer footer footer footer";
 }
-.tool_box {background-color: rgba(255, 255, 255, 0.3)}
+.tool_box {}
 .tool_box__top {grid-area: top_toolbox; transform-origin: bottom; transform: skew(-45deg);}
 .tool_box__left {grid-area: left_toolbox; transform-origin: right; transform: skew(0, -45deg);}
 .tool_box__right {grid-area: right_toolbox; transform-origin: left; transform: skew(0, -45deg);}
 .tool_box__bottom {grid-area: bottom_toolbox; transform-origin: top; transform: skew(-45deg);}
-.game_field {grid-area: gamefield; background-color: rgba(115, 162, 239, 0.3); position: relative;}
+
+.game_field {grid-area: gamefield; background-color: rgba(115, 162, 239, 0.3); position: relative; border-radius: 10px}
 
 .tool_bar__top {
     transform:skew(45deg) rotate(-90deg);
@@ -304,6 +291,7 @@ section {
     justify-content: space-around;
     align-items: center;
 }
+
 
 .joint {
     height: 30px;
@@ -319,17 +307,17 @@ section {
 .gratitues_page_body {
     max-width: 900px;
     display: grid;
-    grid-template-rows: 270px 1fr;
-    grid-template-columns: 250px 1fr;
-    grid-column-gap: 5px;
+    grid-template-rows: 220px 1fr;
+    grid-template-columns: 270px 1fr;
+    grid-column-gap: 10px;
     grid-template-areas:
             "header header"
             "links preview";
 }
 
-.links_field {grid-area:links; transform: skew(0,-45deg); transform-origin: right;}
-.links_field div {transform: skew(0,45deg); transform-origin: left;}
-.preview_field {grid-area:preview; height: 50vh; width: 50vh;}
+.links_field {grid-area:links; transform: skew(0,-45deg); transform-origin: right; padding: 7% 7%;}
+.links_field>* {transform: skew(0,45deg); transform-origin: left;}
+.preview_field {grid-area:preview; height: 50vw; width: 50vw;}
 
 .templates_page_body {
     max-width: 1200px;
@@ -345,14 +333,12 @@ section {
 
 .body_templater {
     grid-area: bodys;
-    background-color: rgba(255, 255, 255, 0.3);
     transform: skew(-25deg);
     transform-origin: top;
 }
 
 .legs_templater {
     grid-area: legs;
-    background-color: rgba(255, 255, 255, 0.3);
     transform: skew(25deg);
     transform-origin: top;
 }
@@ -360,25 +346,29 @@ section {
 .leaderboard_page_body {
     max-width: 850px;
     display: grid;
-    grid-template-rows: 105px 200px auto 50px;
-    grid-template-columns: 250px minmax(325px,1130px) 20px;
+    grid-template-rows: 275px auto;
+    grid-template-columns: auto;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     grid-template-areas:
-            "header header ."
-            ". detailed ."
-            ". table ."
-            "footer footer footer";
+            "header"
+            "table";
+}
+
+.leaderboard_page_body header {
+    grid-template-areas:
+            ". nav nav . head1"
+            ". nav nav . head2"
+            ". nav nav . head2"
+            ". . . . .";
 }
 
 .detailed_screen{
-    background-color: rgba(255, 255, 255, 0.3);
     grid-area: detailed;
     transform: skew(-45deg);
 }
 
 .score_table{
-    background-color: rgba(255, 255, 255, 0.3);
     grid-area: table;
 }
 

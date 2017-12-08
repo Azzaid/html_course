@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Tasks/Lesson 6/Task19(position absolute)/position-images.html" line="13" />
+    <bookmark url="file://$PROJECT_DIR$/Tasks/Lesson 7/Task22(adapt-page)/index.html" line="47" />
+    <bookmark url="file://$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/gameEngineMK2.js" line="28" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5fe7e941-59ff-4bbb-9a19-aa3259a1f6ef" name="Default" comment="Tryed to create oop">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tasks/Graduation/images/Blue_button.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tasks/Graduation/images/blue_button_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tasks/Graduation/images/metal_cower.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/IT-academy.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tasks/Graduation/Leaderboard.html" afterPath="$PROJECT_DIR$/Tasks/Graduation/Leaderboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tasks/Graduation/Styles/mainPage.css" afterPath="$PROJECT_DIR$/Tasks/Graduation/Styles/mainPage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tasks/Graduation/Templates.html" afterPath="$PROJECT_DIR$/Tasks/Graduation/Templates.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tasks/Graduation/game.html" afterPath="$PROJECT_DIR$/Tasks/Graduation/game.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tasks/Graduation/gratitues.html" afterPath="$PROJECT_DIR$/Tasks/Graduation/gratitues.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tasks/Graduation/index.html" afterPath="$PROJECT_DIR$/Tasks/Graduation/index.html" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tasks/Graduation/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gratitues.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tasks/Graduation/gratitues.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="50" lean-forward="false" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Leaderboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Leaderboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainPage.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Styles/mainPage.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="319" column="62" lean-forward="true" selection-start-line="319" selection-start-column="62" selection-end-line="319" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainPageEngine.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/mainPageEngine.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc;n#NewsBlock#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameEngine.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/GameEngine.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3196">
+              <caret line="188" column="22" lean-forward="false" selection-start-line="188" selection-start-column="19" selection-end-line="188" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>card</find>
+      <find>bonelenght</find>
+      <find>addForce</find>
+      <find>color</find>
+      <find>bann</find>
+      <find>cover</find>
+      <find>game_field</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Tasks/Lesson5/Task13(poker-2)/styles/poker-2.css" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson5/Task16(pagination)/pagination.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson5/Task16(pagination)/styles/paginator.css" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 6/Task9(position absolute)/position-images.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 6/Task17(color blocks)/color-blocks-table.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 6/Task17(color blocks)/color-blocks-div.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 6/Task18(first layout)/first-layout-table.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 6/Task18(first layout)/first-layout-div.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson5/Task15(pseudoclasses)/CSS_chess.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson5/Task14(tables-2)/table-test.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 7/Task21(one block)/one-block.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 7/Task21(one block)/style/polimorph.css" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 7/Task22(adapt-page)/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/gameEngine.js" />
+        <option value="$PROJECT_DIR$/Tasks/games/Mach-mach/styles/gamestyles.css" />
+        <option value="$USER_HOME$/Desktop/Greeny's/js/index.js" />
+        <option value="$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/GameEngineMK3.js" />
+        <option value="$PROJECT_DIR$/Tasks/games/Mach-mach/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 7/Task22(adapt-page)/styles/BlueOnWhite.css" />
+        <option value="$PROJECT_DIR$/Tasks/games/EvolveGame/Scripts/elbyid.js" />
+        <option value="$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/gameEngineMK2.js" />
+        <option value="$PROJECT_DIR$/Tasks/websocket/challenge.js" />
+        <option value="$PROJECT_DIR$/Tasks/games/EvolveGame/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/games/EvolveGame/Styles/Style.css" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 10/Task 31/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 10/Task 31/Scripts/engine.js" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 10/Task 32/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 10/Task 32/Scripts/engine.js" />
+        <option value="$PROJECT_DIR$/Tasks/games/EvolveGame/Scripts/GameEngine.js" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 33/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 33/Styles/Style.css" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 33/Scripts/engine.js" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 34/Scripts/countries.js" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 34/Scripts/script.js" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 34/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 35/Scripts/engine.js" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 35/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Lesson 11/Task 35/Styles/Style.css" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Game.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Styles/Leaderboard.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Scripts/connectionsDrawer.js" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Scripts/GameEngine.js" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Scripts/Previewer.js" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Scripts/mainPageEngine.js" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/index.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/game.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Templates.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Leaderboard.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/gratitues.html" />
+        <option value="$PROJECT_DIR$/Tasks/Graduation/Styles/mainPage.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="849" />
+    <option name="width" value="1072" />
+    <option name="height" value="1042" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IT-academy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IT-academy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IT-academy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IT-academy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IT-academy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IT-academy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Graduation" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="nodejs_interpreter_path" value="D:/NodeJS/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AllProjects\IT-academy\Tasks\Lesson 11\Task 35" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Lesson 11\Task 34" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Lesson 11\Task 33" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Lesson 11" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Lesson 10\Task 32" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AllProjects\IT-academy\Tasks\Graduation\images" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Graduation\Scripts\APIs" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Graduation" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\Graduation\Scripts" />
+      <recent name="D:\AllProjects\IT-academy\Tasks\games" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.challenge.js">
+    <configuration default="false" name="challenge.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="challenge.js" working-dir="$PROJECT_DIR$/Tasks/websocket">
+      <method />
+    </configuration>
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.challenge.js" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.challenge.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5fe7e941-59ff-4bbb-9a19-aa3259a1f6ef" name="Default" comment="" />
+      <created>1508339193650</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508339193650</updated>
+      <workItem from="1508339196597" duration="2306000" />
+      <workItem from="1508422766230" duration="10091000" />
+      <workItem from="1508510449494" duration="4965000" />
+      <workItem from="1508771857873" duration="16000" />
+      <workItem from="1508857351763" duration="10466000" />
+      <workItem from="1508944274705" duration="7247000" />
+      <workItem from="1509028710561" duration="6223000" />
+      <workItem from="1509376591885" duration="4145000" />
+      <workItem from="1509461690693" duration="6512000" />
+      <workItem from="1509633373182" duration="10186000" />
+      <workItem from="1509723057599" duration="7030000" />
+      <workItem from="1509737434556" duration="2449000" />
+      <workItem from="1509740169566" duration="743000" />
+      <workItem from="1509768573478" duration="8853000" />
+      <workItem from="1509808184642" duration="11456000" />
+      <workItem from="1509856350061" duration="15680000" />
+      <workItem from="1509907875644" duration="1797000" />
+      <workItem from="1509910403564" duration="4718000" />
+      <workItem from="1509915741681" duration="684000" />
+      <workItem from="1509939350313" duration="1649000" />
+      <workItem from="1509942367509" duration="2276000" />
+      <workItem from="1509946318426" duration="3842000" />
+      <workItem from="1509959509526" duration="4103000" />
+      <workItem from="1509964709064" duration="7685000" />
+      <workItem from="1509985514106" duration="2442000" />
+      <workItem from="1510033914573" duration="1096000" />
+      <workItem from="1510039433561" duration="21128000" />
+      <workItem from="1510070783443" duration="5598000" />
+      <workItem from="1510080852286" duration="3896000" />
+      <workItem from="1510553033802" duration="1820000" />
+      <workItem from="1510559306033" duration="1006000" />
+      <workItem from="1511018884155" duration="8795000" />
+      <workItem from="1511068058804" duration="17277000" />
+      <workItem from="1511112958193" duration="3385000" />
+      <workItem from="1511195756987" duration="5559000" />
+      <workItem from="1511279258634" duration="12246000" />
+      <workItem from="1511368262477" duration="7784000" />
+      <workItem from="1511451446616" duration="18368000" />
+      <workItem from="1511545775211" duration="8864000" />
+      <workItem from="1511587331804" duration="9386000" />
+      <workItem from="1511611838008" duration="2198000" />
+      <workItem from="1511619988489" duration="11935000" />
+      <workItem from="1511694832702" duration="2184000" />
+      <workItem from="1511698433484" duration="1464000" />
+      <workItem from="1511702804434" duration="3098000" />
+      <workItem from="1511713485269" duration="1042000" />
+      <workItem from="1511805886146" duration="693000" />
+      <workItem from="1511812692860" duration="532000" />
+      <workItem from="1511977679930" duration="7166000" />
+      <workItem from="1512057804900" duration="7939000" />
+      <workItem from="1512072570106" duration="2498000" />
+      <workItem from="1512152668449" duration="12819000" />
+      <workItem from="1512166675863" duration="175000" />
+      <workItem from="1512225358366" duration="15436000" />
+      <workItem from="1512245981949" duration="5151000" />
+      <workItem from="1512276741116" duration="8204000" />
+      <workItem from="1512296810173" duration="4740000" />
+      <workItem from="1512303891525" duration="6620000" />
+      <workItem from="1512310690769" duration="192000" />
+      <workItem from="1512316180993" duration="7575000" />
+      <workItem from="1512405710077" duration="14098000" />
+      <workItem from="1512493699161" duration="5550000" />
+      <workItem from="1512502268030" duration="125000" />
+      <workItem from="1512575125403" duration="4662000" />
+      <workItem from="1512587682882" duration="8367000" />
+      <workItem from="1512662231162" duration="19961000" />
+      <workItem from="1512687367181" duration="138000" />
+      <workItem from="1512752282791" duration="6176000" />
+    </task>
+    <task id="LOCAL-00001" summary="Freshly created page for all my HTML/CSS training tasks">
+      <created>1508342016951</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508342016951</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Task 13 done.">
+      <created>1508429805377</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1508429805377</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add link to github repo">
+      <created>1508430031958</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1508430031958</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Task 16 pagination is done">
+      <created>1508431666677</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1508431666677</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Task 15 is done">
+      <created>1508435200286</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1508435200286</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add half of Task14">
+      <created>1508515695323</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1508515695323</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Lesson 6 main tasks done. Also fixed lesson 5.">
+      <created>1509035657345</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1509035657346</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Some images">
+      <created>1509035905007</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1509035905007</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Images">
+      <created>1509036016820</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1509036016820</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Lots of new stuff. Especially brand new Match-match game.">
+      <created>1509889068392</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1509889068392</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Card game is done">
+      <created>1509972265136</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1509972265136</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Uploaded missing images">
+      <created>1509972675661</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1509972675661</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tryed to create oop styled game engine. Not ready yet.">
+      <created>1510084689426</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1510084689426</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Lots of changes. Also half of sandbox game and graduation project">
+      <created>1512166789382</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1512166789382</updated>
+    </task>
+    <task id="LOCAL-00015" summary="First page of my graduation task">
+      <created>1512243673466</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512243673466</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added gamepage">
+      <created>1512303989176</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1512303989176</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added gratitude page. Also lots of small tweaks.">
+      <created>1512310547845</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1512310547845</updated>
+    </task>
+    <task id="LOCAL-00018" summary="All major pages created">
+      <created>1512327811247</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1512327811247</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Cooltransformable header on the main page">
+      <created>1512419057429</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1512419057429</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added some beauty">
+      <created>1512502337335</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1512502337335</updated>
+    </task>
+    <task id="LOCAL-00021" summary="main page owerhaul">
+      <created>1512596163952</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1512596163952</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Yet another redesign. Also some functionality tweaks.">
+      <created>1512687472208</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1512687472208</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="424510000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="849" y="0" width="1072" height="1042" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27935606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Freshly created page for all my HTML/CSS training tasks" />
+    <MESSAGE value="Task 13 done." />
+    <MESSAGE value="Add link to github repo" />
+    <MESSAGE value="Task 16 pagination is done" />
+    <MESSAGE value="Task 15 is done" />
+    <MESSAGE value="Add half of Task14" />
+    <MESSAGE value="Lesson 6 main tasks done. Also fixed lesson 5." />
+    <MESSAGE value="Some images" />
+    <MESSAGE value="Images" />
+    <MESSAGE value="Lots of new stuff. Especially brand new Match-match game." />
+    <MESSAGE value="Card game is done" />
+    <MESSAGE value="Uploaded missing images" />
+    <MESSAGE value="Tryed to create oop styled game engine. Not ready yet." />
+    <MESSAGE value="Lots of changes. Also half of sandbox game and graduation project" />
+    <MESSAGE value="First page of my graduation task" />
+    <MESSAGE value="Added gamepage" />
+    <MESSAGE value="Added gratitude page. Also lots of small tweaks." />
+    <MESSAGE value="All major pages created" />
+    <MESSAGE value="Cooltransformable header on the main page" />
+    <MESSAGE value="Added some beauty" />
+    <MESSAGE value="main page owerhaul" />
+    <MESSAGE value="Yet another redesign. Also some functionality tweaks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Yet another redesign. Also some functionality tweaks." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 6/Task19(position absolute)/position-images.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="56" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 7/Task21(one block)/one-block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 6/Task20(position-fixed)/position-images.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-199">
+          <caret line="12" column="117" lean-forward="false" selection-start-line="12" selection-start-column="117" selection-end-line="12" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson 5/poker2.html" />
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson5/Task13(poker-2)/poker-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="56" lean-forward="true" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson5/Task13(poker-2)/styles/poker-2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/gameEngine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="73" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/games/Mach-mach/images/bicycle back.jpg" />
+    <entry file="file://$USER_HOME$/Desktop/Greeny's/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Greeny's/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/GameEngineMK3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2992">
+          <caret line="176" column="33" lean-forward="false" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 7/Task22(adapt-page)/styles/BlueOnWhite.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 7/Task22(adapt-page)/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/games/EvolveGame/Scripts/elbyid.js" />
+    <entry file="file://$PROJECT_DIR$/Tasks/games/Mach-mach/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/games/Mach-mach/styles/gamestyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/websocket/challenge.js" />
+    <entry file="file://$PROJECT_DIR$/Tasks/games/Mach-mach/scripts/gameEngineMK2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="117" column="32" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 10/Task 31/Scripts/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 10/Task 31/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 10/Task 32/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 33/Styles/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="146" lean-forward="false" selection-start-line="0" selection-start-column="146" selection-end-line="0" selection-end-column="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 33/Scripts/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 33/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 10/Task 32/Scripts/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="65" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 34/Scripts/countries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 34/Scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 34/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 35/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 35/Scripts/engine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/images/90a3cb17e0d2b54e31e7e94a843d9c3d.png" />
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 11/Task 35/Styles/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="104" lean-forward="false" selection-start-line="1" selection-start-column="104" selection-end-line="1" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../RollingScopes/orange_rabbit/positions-and-floats/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="95" lean-forward="false" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/games/EvolveGame/Styles/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="108" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Lesson 7/Task21(one block)/style/polimorph.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/APIs/TweenLite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3145">
+          <caret line="195" column="51" lean-forward="false" selection-start-line="195" selection-start-column="45" selection-end-line="195" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/images/Zlogo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/connectionsDrawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2669">
+          <caret line="157" column="36" lean-forward="false" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/OldIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="84" column="16" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="84" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/Previewer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/GameEngine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3196">
+          <caret line="188" column="22" lean-forward="false" selection-start-line="188" selection-start-column="19" selection-end-line="188" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Scripts/mainPageEngine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#NewsBlock#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Templates.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Leaderboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/gratitues.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="50" lean-forward="false" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tasks/Graduation/Styles/mainPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="319" column="62" lean-forward="true" selection-start-line="319" selection-start-column="62" selection-end-line="319" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
