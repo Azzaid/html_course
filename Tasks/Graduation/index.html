@@ -8,66 +8,68 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-        <!--<img src="images/Transformer.png">!-->
-        <header>
-            <nav>
-                <div class="eye"><img src="images/eye_replacer.png"></div>
-                <div class="slider_button navplace1"><div class="slider_button_cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
-                <div class="slider_button navplace2"><div class="slider_button_cover">Играть</div><a class="covered_button" href="game.html"></a></div>
-                <div class="slider_button navplace3"><div class="slider_button_cover">Примеры</div><a class="covered_button" href="Templates.html"></a></div>
-                <div class="slider_button navplace4"><div class="slider_button_cover">Лидеры</div><a class="covered_button" href="Leaderboard.html"></a></div>
-                <div class="slider_button navplace5"><div class="slider_button_cover">Спасибо</div><a class="covered_button" href="gratitues.html"></a></div>
-            </nav>
-            <a class="headerplace1 technoframe" href="game.html">
-                <!--<img class="technoframe__left_bot_corner" src="images/bottom_frame.png">!-->
-                <!--<img class="technoframe__right_top_corner" src="images/frameTop.png">!-->
-                <h1>
-                    Робостройка
-                </h1>
-            </a>
-            <div class="headerplace2 technoframe">
+<div class="main_page_wrapper">
+    <header>
+        <nav>
+            <div class="eye"><img src="images/eye_replacer.png"></div>
+            <div class="slider_button navplace1"><div class="slider_button_cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
+            <div class="slider_button navplace2"><div class="slider_button_cover">Играть</div><a class="covered_button" href="game.html"></a></div>
+            <div class="slider_button navplace3"><div class="slider_button_cover">Примеры</div><a class="covered_button" href="Templates.html"></a></div>
+            <div class="slider_button navplace4"><div class="slider_button_cover">Лидеры</div><a class="covered_button" href="Leaderboard.html"></a></div>
+            <div class="slider_button navplace5"><div class="slider_button_cover">Спасибо</div><a class="covered_button" href="gratitues.html"></a></div>
+        </nav>
+        <a class="headerplace1 technoframe" href="game.html">
+            <!--<img class="technoframe__left_bot_corner" src="images/bottom_frame.png">!-->
+            <!--<img class="technoframe__right_top_corner" src="images/frameTop.png">!-->
+            <h1>
+                Робостройка
+            </h1>
+        </a>
+        <div class="headerplace2 technoframe">
 
-                <p>Что-то непонятно? <br> Кликни меня!</p>
+            <p>Что-то непонятно? <br> Кликни меня!</p>
+        </div>
+        <div class="headerplace3 technoframe" id="newsBlock" onclick="newsBlock.togle()">
+            <div onclick="newsBlock.nextNews()"></div>
+            <div>Новости! <br> Хотите знать больше?</div>
+            <div class="newsPost">
+                <h2>Будущее</h2>
+                <p>Я наверное сделаю что-то прекрасное но об этом узнаем потом.</p>
             </div>
-            <div class="headerplace3 technoframe" id="newsBlock" onclick="newsBlock.togle()">
-                <div onclick="newsBlock.nextNews()"></div>
-                <div>Новости! <br> Хотите знать больше?</div>
-                <div class="newsPost">
-                    <h2>Будущее</h2>
-                    <p>Я наверное сделаю что-то прекрасное но об этом узнаем потом.</p>
-                </div>
-                <div class="newsPost">
-                    <h2>03.12.07 21.53</h2>
-                    <p>Закончил грубый набросок всех страниц. Теперь адаптивность на очереди.</p>
-                </div>
-                <div class="newsPost">
-                    <h2>03.12.07 19.08</h2>
-                    <p>Экран с благодарностями теперь благодарит. Хотя вот сайт it-akademy отобразить не смог. Говорит у меня jQuery нет. Ну нет. Доберусь до украшений и будет.</p>
-                </div>
-                <div class="newsPost">
-                    <h2>03.12.07 15.40</h2>
-                    <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
-                </div>
-                <div class="newsPost">
-                    <h2>Сегодня я поправил главную страницу</h2>
-                    <p>Теперь сайт капельку адаптивный.</p>
-                </div>
-                <div class="newsPost">
-                    <h2>03.12.07 15.40</h2>
-                    <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
-                </div>
-                <div class="newsPost">
-                    <h2>Прошлое</h2>
-                    <p>Здесь водились драконы и динозавры.</p>
-                </div>
-                <div onclick="newsBlock.prevNews()"></div>
-                <div class="newsPost"></div>
+            <div class="newsPost">
+                <h2>03.12.07 21.53</h2>
+                <p>Закончил грубый набросок всех страниц. Теперь адаптивность на очереди.</p>
             </div>
-        </header>
+            <div class="newsPost">
+                <h2>03.12.07 19.08</h2>
+                <p>Экран с благодарностями теперь благодарит. Хотя вот сайт it-akademy отобразить не смог. Говорит у меня jQuery нет. Ну нет. Доберусь до украшений и будет.</p>
+            </div>
+            <div class="newsPost">
+                <h2>03.12.07 15.40</h2>
+                <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
+            </div>
+            <div class="newsPost">
+                <h2>Сегодня я поправил главную страницу</h2>
+                <p>Теперь сайт капельку адаптивный.</p>
+            </div>
+            <div class="newsPost">
+                <h2>03.12.07 15.40</h2>
+                <p>Сегодня сделал игровой экран. Потом займусь адаптивностью. А потом и до красоты руки дойдут.</p>
+            </div>
+            <div class="newsPost">
+                <h2>Прошлое</h2>
+                <p>Здесь водились драконы и динозавры.</p>
+            </div>
+            <div onclick="newsBlock.prevNews()"></div>
+            <div class="newsPost"></div>
+        </div>
+    </header>
+</div>
+
 
 <canvas id="shineUnderCursor" class="underlay"></canvas>
 <script src="Scripts/APIs/TweenLite.js"></script>
 <script src="Scripts/connectionsDrawer.js"></script>
-    <script src="Scripts/mainPageEngine.js"></script>
+<script src="Scripts/mainPageEngine.js"></script>
 </body>
 </html>

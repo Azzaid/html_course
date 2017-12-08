@@ -12,7 +12,11 @@ body {
     /*font-family: 'Press Start 2P', cursive;*/
 }
 
-.underlay {position: absolute; top:0; left: 0; width: 100vw; height: 100vh;}
+.underlay {position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;}
 
 a {color: white; text-decoration: none;}
 a:visited {color: white; text-decoration: none}
@@ -27,6 +31,17 @@ a:visited {color: white; text-decoration: none}
     -webkit-box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
     -moz-box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
     box-shadow: 5px -5px 29px 0px rgba(53,198,242,0.6);
+}
+
+.main_page_wrapper{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -366,7 +381,7 @@ header > :nth-child(n+2) {
 
 
 
-@media all and (max-width:585px) {
+@media all and (max-width:600px) {
     header {
         grid-template-areas:
                 "nav head1 head1 head1"
@@ -389,6 +404,16 @@ header > :nth-child(n+2) {
     .headerplace2>*, .headerplace3>*{
         transform: skew(0deg);
     }
+    .game_page_body {
+        grid-template-columns: 15px 120px minmax(325px,630px);
+        grid-template-areas:
+                "header header header"
+                ". . top_toolbox"
+                "left_toolbox left_toolbox gamefield"
+                ". . bottom_toolbox"
+                "footer footer footer";
+    }
+    .right_toolbox {display: none}
 }
 
 @media all and (max-width:500px) {
@@ -410,17 +435,5 @@ header > :nth-child(n+2) {
                 "eyesocket eyesocket eyesocket navplace1"
                 "eyesocket eyesocket eyesocket navplace2"
                 "navplace5 navplace4 navplace4 navplace3 ";
-    }
-}
-
-@media all and (max-width:330px) {
-    header {
-        grid-template-columns:85px auto;
-        grid-template-areas:
-                ". head1"
-                "nav nav"
-                "nav nav"
-                "head2 head2"
-                "head3 head3";
     }
 }
