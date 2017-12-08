@@ -32,20 +32,17 @@ a:visited {color: white; text-decoration: none}
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 5px 205px 110px 40px minmax(0px, 450px);
-    grid-template-rows: 100px 100px 50px 1fr;
+    grid-template-columns: 270px 50px 40px minmax(0px, 450px);
+    grid-template-rows: 100px 100px 50px 1fr 1fr;
     grid-row-gap: 10px;
     grid-template-areas:
-            ". nav nav . head1"
-            ". nav nav . head2"
-            ". nav nav . head3"
-            ". . . . head3";
+            "nav nav . head1"
+            "nav nav . head2"
+            "nav nav . head3"
+            ". . . head3"
+            ". . . head3";
     text-align: center;
     position: relative;
-    background-image: url("../images/Zlogo.png");
-    background-size: 220px;
-    background-position: top left;
-    background-repeat: no-repeat;
 }
 
 nav {
@@ -53,39 +50,15 @@ nav {
     grid-area: nav;
     display: grid;
     grid-template-areas:
-            ". . navplace1 navplace1 ."
-            ". . . navplace2 navplace2"
-            ". . . navplace3 navplace3"
-            ". . navplace4 navplace4 ."
-            "navplace6 navplace5 navplace5 . .";
+            ". . navplace1 navplace1"
+            "eyesocket eyesocket eyesocket navplace2"
+            "eyesocket eyesocket eyesocket navplace3"
+            ". . navplace4 navplace4"
+            "navplace6 navplace5 navplace5 .";
     grid-template-rows: repeat(5, 50px);
-    grid-template-columns: 100px repeat(4, 50px);
+    grid-template-columns: 100px repeat(2, 50px) 100px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
-}
-
-.button {
-    position: relative;
-    width: 100px;
-    height: 50px;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 45px;
-    z-index: 2;
-}
-
-.button:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -15px;
-    left: 10px;
-    width: 80px;
-    height: 80px;
-    background-color: rgba(235, 235, 235,0.4);
-    transform: rotate(45deg);
-    margin: 0;
 }
 
 .slider_button {
@@ -124,14 +97,6 @@ nav {
     z-index: 0;
 }
 
-.button__small:after {
-    position: absolute;
-    top: -15px;
-    left: 10px;
-    width: 80px;
-    height: 80px;
-}
-
 .navplace1 {
     grid-area:  navplace1
 }
@@ -154,6 +119,17 @@ nav {
 
 .navplace6 {
     grid-area: navplace6
+}
+
+.eye{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: eyesocket;
+}
+
+.eye img {
+    width: 90%;
 }
 
 header > :nth-child(n+2) {
@@ -191,12 +167,6 @@ header > :nth-child(n+2) {
     grid-area: head3
 }
 
-
-
-section {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
 .about {
     grid-area: about;
     transition: width 1s;
@@ -208,9 +178,6 @@ section {
     transition: width 1s;
     transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
 }
-
-.banners {background-color: rgba(255, 255, 255, 0.3); grid-area: banners; transform-origin: left; transform: skew(0, -45deg); display: flex; justify-content: space-around; flex-direction: column;}
-.banners>* {transform-origin:left; transform: skew(0, 45deg); flex-basis: 100px; flex-grow: 1;}
 
 .expanded{
     position: relative;
@@ -273,6 +240,31 @@ section {
             ". . bottom_toolbox ."
             "footer footer footer footer";
 }
+
+.button {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    z-index: 2;
+}
+
+.button:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(235, 235, 235,0.4);
+    transform: rotate(45deg);
+    margin: 0;
+}
+
 .tool_box {}
 .tool_box__top {grid-area: top_toolbox; transform-origin: bottom; transform: skew(-45deg);}
 .tool_box__left {grid-area: left_toolbox; transform-origin: right; transform: skew(0, -45deg);}
@@ -374,52 +366,61 @@ section {
 
 
 
-@media all and (max-width:610px) {
+@media all and (max-width:585px) {
     header {
         grid-template-areas:
-                ". . head1 head1 head1 ."
-                ". nav nav head2 head2 ."
-                ". nav nav head3 head3 ."
-                ". . . head3 head3 .";
+                "nav head1 head1 head1"
+                "nav head2 head2 head2"
+                "nav head3 head3 head3"
+                ". head3 head3 head3"
+                ". head3 head3 head3";
     }
     nav {
         grid-template-areas:
-                ". . navplace1"
-                ". . navplace2"
-                "navplace5 navplace4 navplace3";
-        grid-template-rows: repeat(3, 50px);
-        grid-template-columns: repeat(3, 100px);
+                ". . . ."
+                ". navplace1 navplace1 ."
+                "eyesocket eyesocket navplace2 navplace2"
+                "eyesocket eyesocket navplace3 navplace3"
+                "navplace5 navplace4 navplace4 . ";
     }
-    header > div:nth-child(n+3) {
+    .headerplace2, .headerplace3 {
         transform: skew(0deg);
     }
-    header > div:nth-child(n+3) p {
+    .headerplace2>*, .headerplace3>*{
         transform: skew(0deg);
     }
-    .main_page_body {
-        grid-template-areas:
-                "header header"
-                "about about"
-                "watsnew watsnew"
-                "footer footer";
-    }
-    .banners {display: none}
 }
 
 @media all and (max-width:500px) {
     header {
+        grid-template-columns:85px auto;
         grid-template-areas:
-                ". head1 head1 head1 head1 ."
-                ". nav nav . . ."
-                ". nav nav . . ."
-                ". . . head3 head3 .";
-        background-size: 150px;
-        background-position: top 87px left;
+                ". head1"
+                "nav nav"
+                "nav nav"
+                "head2 head2"
+                "head3 head3";
+    }
+    .eye img {
+        width: 65%;
     }
     nav {
-        justify-self: end;
+        grid-template-rows: repeat(3,50px);
+        grid-template-areas:
+                "eyesocket eyesocket eyesocket navplace1"
+                "eyesocket eyesocket eyesocket navplace2"
+                "navplace5 navplace4 navplace4 navplace3 ";
     }
-    header > div:nth-child(n+3) {
-        display: none;
+}
+
+@media all and (max-width:330px) {
+    header {
+        grid-template-columns:85px auto;
+        grid-template-areas:
+                ". head1"
+                "nav nav"
+                "nav nav"
+                "head2 head2"
+                "head3 head3";
     }
 }
