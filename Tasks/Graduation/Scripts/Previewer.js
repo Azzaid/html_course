@@ -2,7 +2,7 @@
  * Created by Johanas on 03.12.2017.
  */
 const field = document.getElementById("previewField");
-const images = ["images/redButton.png","images/Zlogo.png"];
+const images = ["images/gratitues/Link1.png","images/gratitues/Link2.png","images/gratitues/Link3.png","images/gratitues/Link4.jpeg"];
 
 function showPreview(event) {
     field.href = event.target.href;

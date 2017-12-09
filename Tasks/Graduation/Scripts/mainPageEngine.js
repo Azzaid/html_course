@@ -32,7 +32,7 @@ class NewsBlock {
 
     }
     nextNews() {
-        if (this.currentNews<(this.news.length-1)) {
+        if (this.currentNews<(this.news.length-2)) {
             this.currentNews+=1;
             this.nextBlock.classList.remove("newsPost__next");
             this.nextBlock = this.news[this.currentNews+1];
@@ -46,7 +46,7 @@ class NewsBlock {
         }
     }
     prevNews() {
-        if (this.currentNews>2){
+        if (this.currentNews>1){
             this.currentNews-=1;
             this.nextBlock.classList.remove("newsPost__next");
             this.nextBlock = this.news[this.currentNews+1];
@@ -74,14 +74,14 @@ $(".jumbatrone").slick({
 
     responsive: [
         {
-            breakpoint: 800,
+            breakpoint: 900,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2
             }
         },
         {
-            breakpoint: 600,
+            breakpoint: 700,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1

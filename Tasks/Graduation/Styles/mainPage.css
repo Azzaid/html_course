@@ -184,7 +184,7 @@ header > :nth-child(n+2) {
 }
 
 
-.headerplace2 div:last-child{
+.hidden_rules div:last-child{
     overflow: hidden;
     height: 0px;
 }
@@ -344,8 +344,8 @@ header > :nth-child(n+2) {
 .gratitues_page_body {
     max-width: 900px;
     display: grid;
-    grid-template-rows: 220px 1fr;
-    grid-template-columns: 270px 1fr;
+    grid-template-rows: 220px auto;
+    grid-template-columns: 270px auto;
     grid-column-gap: 10px;
     grid-template-areas:
             "header header"
@@ -354,12 +354,12 @@ header > :nth-child(n+2) {
 
 .links_field {grid-area:links; transform: skew(0,-45deg); transform-origin: right; padding: 7% 7%;}
 .links_field>* {transform: skew(0,45deg); transform-origin: left;}
-.preview_field {grid-area:preview; height: 50vw; width: 50vw;}
+.preview_field {grid-area:preview; min-height: 40vw; width: 50vw; background-size: contain; background-repeat: no-repeat; background-position: center;}
 
 .templates_page_body {
     display: grid;
     grid-template-rows: auto 300px 300px;
-    grid-template-columns: 60px minmax(300px, 800px) 60px;
+    grid-template-columns: 60px minmax(200px, 800px) 60px;
     grid-row-gap: 5px;
     grid-template-areas:
             "header header header"
@@ -370,11 +370,12 @@ header > :nth-child(n+2) {
 .body_templater {
     grid-area: bodys;
     transform: skew(-25deg);
-    padding: 0 7%;
+    padding: 0 10%;
 }
 
 .body_templater>div{
     transform: skew(25deg);
+    width: auto;
 }
 
 .body_templater img {
@@ -385,7 +386,7 @@ header > :nth-child(n+2) {
 .legs_templater {
     grid-area: legs;
     transform: skew(25deg);
-    padding: 0 7%;
+    padding: 0 10%;
 }
 
 .legs_templater>div{
@@ -461,7 +462,7 @@ header > :nth-child(n+2) {
                 ". . bottom_toolbox"
                 "footer footer footer";
     }
-    .right_toolbox {display: none}
+    .right_toolbox {width: 0px}
 }
 
 @media all and (max-width:500px) {
@@ -514,4 +515,14 @@ header > :nth-child(n+2) {
     .legs_templater>div{
         transform: skew(0deg);
     }
+    .gratitues_page_body {
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+                "header header"
+                "preview preview"
+                "links links";
+    }
+    .preview_field {min-height: 50vw; width: 95vw;}
+    .links_field {transform: skew(0,0);}
+    .links_field>* {transform: skew(0,0);}
 }
