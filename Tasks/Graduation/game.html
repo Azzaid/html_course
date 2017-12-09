@@ -10,7 +10,7 @@
     <div class="game_page_body">
         <header>
             <nav>
-                <div class="eye"><img src="images/eye_replacer.png"></div>
+                <div class="eye"><img src="images/Eye.png"></div>
                 <div class="slider_button navplace1"><div class="slider_button_cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
                 <div class="slider_button navplace2"><div class="slider_button_cover">Играть</div><a class="covered_button" href="game.html"></a></div>
                 <div class="slider_button navplace3"><div class="slider_button_cover">Примеры</div><a class="covered_button" href="Templates.html"></a></div>
@@ -24,13 +24,18 @@
                     Робостройка
                 </h1>
             </a>
-            <div class="headerplace2 technoframe">
-
-                <p>Что-то непонятно? <br> Кликни меня!</p>
+            <div class="headerplace2 technoframe hidden_rules" id="ruleset" >
+                <div onclick="rules.expandRuleset()"><p>Что-то непонятно? <br> Кликни меня!</p></div>
+                <div>
+                    <h2>О чём этот сайт?</h2>
+                    <p>Этот сайт посвящен игре в стиле песочница. Тебе нужно из шарниров, конечностей и суставов собрать робота. В будущем его можно будет программировать.</p>
+                    <h2>Как в это играть?</h2>
+                    <p>Просто перетащи сустав с панели инструментов на игровое поле чтобы создать новый сустав. Перетащи один сустав к другому чтобы соединить их костью. Такими простыми манипуляции собери робота. Нажми кнопку старт и посмотри как его размажет  по земле. Увы гравитация при полном отсутствии силы трения пока работает только так.</p>
+                </div>
             </div>
         </header>
         <div id="topToolBox" class="tool_box tool_box__top  technoframe">
-            <div id="mainToolBar" class="tool_bar tool_bar__top">
+            <div id="mainToolBar" class="tool_bar tool_bar__gorisontal">
                 <div id="samplejoint" class="joint joint__sample" draggable="true" ondragstart="game.takeElement(event)"></div>
                 <div id="startButton" class="button" onclick="game.startSim()">START</div>
                 <div id="stopButton" class="button" onclick="game.stopSim()">STOP</div>
@@ -38,7 +43,7 @@
             </div>
         </div>
         <div id="bottomToolBox" class="tool_box tool_box__bottom  technoframe">
-            <div id="mainToolBar" class="tool_bar tool_bar__top">
+            <div id="mainToolBar" class="tool_bar tool_bar__gorisontal">
                 <div id="samplejoint" class="joint joint__sample" draggable="true" ondragstart="game.takeElement(event)"></div>
                 <div id="startButton" class="button" onclick="game.startSim()">START</div>
                 <div id="stopButton" class="button" onclick="game.stopSim()">STOP</div>
@@ -46,7 +51,7 @@
             </div>
         </div>
         <div id="leftToolBox" class="tool_box tool_box__left  technoframe">
-            <div id="mainToolBar" class="tool_bar tool_bar__top">
+            <div id="mainToolBar" class="tool_bar tool_bar__vertical">
                 <div id="samplejoint" class="joint joint__sample" draggable="true" ondragstart="game.takeElement(event)"></div>
                 <div id="startButton" class="button" onclick="game.startSim()">START</div>
                 <div id="stopButton" class="button" onclick="game.stopSim()">STOP</div>
@@ -54,7 +59,7 @@
             </div>
         </div>
         <div id="rightToolBox" class="tool_box tool_box__right  technoframe">
-            <div id="mainToolBar" class="tool_bar tool_bar__top">
+            <div id="mainToolBar" class="tool_bar tool_bar__vertical">
                 <div id="samplejoint" class="joint joint__sample" draggable="true" ondragstart="game.takeElement(event)"></div>
                 <div id="startButton" class="button" onclick="game.startSim()">START</div>
                 <div id="stopButton" class="button" onclick="game.stopSim()">STOP</div>
@@ -65,7 +70,11 @@
         <div id="gameField" class="game_field" ondrop="game.addElement2(event)" ondragover="game.allowDrop(event)"><div class="ground"></div></div>
     </div>
 
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 <script src="Scripts/GameEngine.js"></script>
+    <script src="Scripts/mainPageEngine.js"></script>
 </body>
 </html>
 

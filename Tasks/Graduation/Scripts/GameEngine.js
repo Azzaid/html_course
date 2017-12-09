@@ -187,7 +187,7 @@ class Bone {
 
         this.domObj.classList.add("bone");
         this.domObj.id = this.domId;
-        this.domObj.textContent = this.domId;
+        //this.domObj.textContent = this.domId;
         this.domObj.ondragstart = function(event) {game.takeElement(event)};
         this.domObj.ondragover = function(event) {game.allowDrop(event)};
         this.domObj.ondrop = function(event) {game.addElement(event)};

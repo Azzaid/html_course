@@ -48,7 +48,7 @@ header {
     grid-area: header;
     display: grid;
     grid-template-columns: 270px 50px 40px minmax(0px, 450px);
-    grid-template-rows: 100px 100px 50px 1fr 1fr;
+    grid-template-rows: 100px auto 50px auto auto;
     grid-row-gap: 10px;
     grid-template-areas:
             "nav nav . head1"
@@ -90,7 +90,7 @@ nav {
     width: 100px;
     height: 50px;
     position: relative;
-    background-image: url("../images/metal_cower.jpg");
+    background-image: url("../images/MetalPlate.png");
     background-size: 100% 100%;
     display: flex;
     align-items: center;
@@ -141,6 +141,7 @@ nav {
     align-items: center;
     justify-content: center;
     grid-area: eyesocket;
+    z-index: 5;
 }
 
 .eye img {
@@ -182,10 +183,22 @@ header > :nth-child(n+2) {
     grid-area: head3
 }
 
-.about {
-    grid-area: about;
-    transition: width 1s;
-    transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
+
+.headerplace2 div:last-child{
+    overflow: hidden;
+    height: 0px;
+}
+
+.visible_rules {
+    transform: skewX(0deg);
+}
+
+.visible_rules>* {
+    transform: skewX(0deg);
+}
+
+.visible_rules div:last-child {
+    height: auto;
 }
 
 .watsNew {
@@ -209,7 +222,6 @@ header > :nth-child(n+2) {
     height: 50px;
     background-image: url("../images/arrow.png");
     background-size: cover;
-    z-index: 4;
 }
 
 .expanded>div:last-child{
@@ -219,32 +231,36 @@ header > :nth-child(n+2) {
     width: 50px;
     height: 50px;
     background-image: url("../images/arrow.png");
-    background-size: cover;}
+    background-size: cover;
+}
 
 .expanded>*{
     transform: skewX(0deg);
 }
 
-.newsPost {display: none}
+.newsPost {height: 0px; overflow: hidden;}
 
 .newsPost__next {
     display: block;
+    height: auto;
     max-height: 100px;
     overflow: hidden;
 }
 .newsPost__current{
     display: block;
+    height: auto;
 }
 .newsPost__prev {
     display: block;
-    max-height: 200px;
+    height: auto;
+    max-height: 100px;
     overflow: hidden;
 }
 
 .game_page_body {
     max-width: 1200px;
     display: grid;
-    grid-template-rows: 215px 120px minmax(325px,630px) 120px 50px;
+    grid-template-rows: auto 120px minmax(325px,630px) 120px 50px;
     grid-template-columns: 15px 120px minmax(325px,630px) 120px;
     grid-row-gap: 5px;
     grid-column-gap: 5px;
@@ -280,7 +296,11 @@ header > :nth-child(n+2) {
     margin: 0;
 }
 
-.tool_box {}
+.tool_box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 .tool_box__top {grid-area: top_toolbox; transform-origin: bottom; transform: skew(-45deg);}
 .tool_box__left {grid-area: left_toolbox; transform-origin: right; transform: skew(0, -45deg);}
 .tool_box__right {grid-area: right_toolbox; transform-origin: left; transform: skew(0, -45deg);}
@@ -288,15 +308,25 @@ header > :nth-child(n+2) {
 
 .game_field {grid-area: gamefield; background-color: rgba(115, 162, 239, 0.3); position: relative; border-radius: 10px}
 
-.tool_bar__top {
-    transform:skew(45deg) rotate(-90deg);
-}
-
 .tool_bar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.tool_bar__gorisontal {
+    transform:skew(45deg);
+    flex-direction: row;
+}
+
+.tool_bar__gorisontal>* {
+    transform: rotate(-90deg);
+}
+
+
+.tool_bar__vertical {
+    transform:skew(0, 45deg);
 }
 
 
@@ -327,27 +357,44 @@ header > :nth-child(n+2) {
 .preview_field {grid-area:preview; height: 50vw; width: 50vw;}
 
 .templates_page_body {
-    max-width: 1200px;
     display: grid;
-    grid-template-rows: 270px 300px 300px 50px;
+    grid-template-rows: auto 300px 300px;
+    grid-template-columns: 60px minmax(300px, 800px) 60px;
     grid-row-gap: 5px;
     grid-template-areas:
-            "header"
-            "bodys"
-            "legs"
-            "footer";
+            "header header header"
+            ". bodys ."
+            ". legs .";
 }
 
 .body_templater {
     grid-area: bodys;
     transform: skew(-25deg);
-    transform-origin: top;
+    padding: 0 7%;
+}
+
+.body_templater>div{
+    transform: skew(25deg);
+}
+
+.body_templater img {
+    width: 200px;
+    height: 200px;
 }
 
 .legs_templater {
     grid-area: legs;
     transform: skew(25deg);
-    transform-origin: top;
+    padding: 0 7%;
+}
+
+.legs_templater>div{
+    transform: skew(-25deg);
+}
+
+.legs_templater img {
+    width: 200px;
+    height: 200px;
 }
 
 .leaderboard_page_body {
@@ -364,10 +411,11 @@ header > :nth-child(n+2) {
 
 .leaderboard_page_body header {
     grid-template-areas:
-            ". nav nav . head1"
-            ". nav nav . head2"
-            ". nav nav . head2"
-            ". . . . .";
+            "nav nav . head1"
+            "nav nav . head2"
+            "nav nav . head2"
+            ". . . head3"
+            ". . . head3";
 }
 
 .detailed_screen{
@@ -435,5 +483,35 @@ header > :nth-child(n+2) {
                 "eyesocket eyesocket eyesocket navplace1"
                 "eyesocket eyesocket eyesocket navplace2"
                 "navplace5 navplace4 navplace4 navplace3 ";
+    }
+    .game_page_body {
+        grid-template-columns: 15px 120px minmax(325px,630px);
+        grid-template-areas:
+                "header header header"
+                ". . top_toolbox"
+                "left_toolbox left_toolbox gamefield"
+                ". . bottom_toolbox"
+                "footer footer footer";
+    }
+
+    .templates_page_body {
+        grid-template-areas:
+                "header header header"
+                "bodys bodys bodys"
+                "legs legs legs";
+    }
+    .right_toolbox {display: none}
+
+    .body_templater {
+        transform: skew(0deg);
+    }
+    .body_templater>div{
+        transform: skew(0deg);
+    }
+    .legs_templater {
+        transform: skew(0deg);
+    }
+    .legs_templater>div{
+        transform: skew(0deg);
     }
 }

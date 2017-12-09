@@ -62,3 +62,49 @@ class NewsBlock {
 }
 
 const newsBlock = new NewsBlock();
+
+$(".jumbatrone").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+
+    responsive: [
+        {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+});
+
+class Rules {
+    constructor () {
+        this.rulesIsOpen = false;
+        this.ruleset = document.getElementById("ruleset");
+    }
+    expandRuleset(){
+        if (this.rulesIsOpen) {
+            this.ruleset.classList.remove("visible_rules");
+            this.rulesIsOpen = false;
+        } else {
+            this.ruleset.classList.add("visible_rules");
+            this.rulesIsOpen = true;
+        }
+    }
+}
+
+const rules = new Rules();
+

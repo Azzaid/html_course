@@ -9,7 +9,7 @@
 <div class="leaderboard_page_body">
     <header>
         <nav>
-            <img class="eye" src="images/eye_replacer.png">
+            <div class="eye"><img src="images/Eye.png"></div>
             <div class="slider_button navplace1"><div class="slider_button_cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
             <div class="slider_button navplace2"><div class="slider_button_cover">Играть</div><a class="covered_button" href="game.html"></a></div>
             <div class="slider_button navplace3"><div class="slider_button_cover">Примеры</div><a class="covered_button" href="Templates.html"></a></div>
@@ -23,10 +23,14 @@
                 Робостройка
             </h1>
         </a>
-        <div class="headerplace2 technoframe">
-
-            <p>Инженеры оценят</p>
-            <p>смертные пройдут мимо</p>
+        <div class="headerplace2 technoframe hidden_rules" id="ruleset" >
+            <div onclick="rules.expandRuleset()"><p>Что-то непонятно? <br> Кликни меня!</p></div>
+            <div>
+                <h2>О чём этот сайт?</h2>
+                <p>Этот сайт посвящен игре в стиле песочница. Тебе нужно из шарниров, конечностей и суставов собрать робота. В будущем его можно будет программировать.</p>
+                <h2>Как в это играть?</h2>
+                <p>Просто перетащи сустав с панели инструментов на игровое поле чтобы создать новый сустав. Перетащи один сустав к другому чтобы соединить их костью. Такими простыми манипуляции собери робота. Нажми кнопку старт и посмотри как его размажет  по земле. Увы гравитация при полном отсутствии силы трения пока работает только так.</p>
+            </div>
         </div>
     </header>
     <div class="score_table technoframe">

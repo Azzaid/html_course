@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>Templates</title>
     <link rel="stylesheet" type="text/css" href="Styles/mainPage.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
 <div class="templates_page_body">
     <header>
         <nav>
+            <div class="eye"><img src="images/Eye.png"></div>
             <div class="slider_button navplace1"><div class="slider_button_cover">Что это?</div><a class="covered_button" href="index.html"></a></div>
             <div class="slider_button navplace2"><div class="slider_button_cover">Играть</div><a class="covered_button" href="game.html"></a></div>
             <div class="slider_button navplace3"><div class="slider_button_cover">Примеры</div><a class="covered_button" href="Templates.html"></a></div>
@@ -22,14 +25,51 @@
                 Робостройка
             </h1>
         </a>
-        <div class="headerplace2 technoframe">
-
-            <p>Инженеры оценят</p>
-            <p>смертные пройдут мимо</p>
+        <div class="headerplace2 technoframe hidden_rules" id="ruleset" >
+            <div onclick="rules.expandRuleset()"><p>Что-то непонятно? <br> Кликни меня!</p></div>
+            <div>
+                <h2>Зачем мне эти картинки?</h2>
+                <p>Здесь собранны наброски удачных конфигураций роботов. Попробуй их.</p>
+            </div>
         </div>
     </header>
-    <div class="body_templater technoframe">Тут будет карусель с примерами тел</div>
-    <div class="legs_templater technoframe">Тут будет карусель с примерами ног</div>
+    <div class="body_templater technoframe">
+        <div class="jumbatrone">
+            <div>
+                <h2>Тело 1</h2>
+                <img src="images/templates/body/Body1.png" alt="Простой треугольник" title="Тело номер один">
+            </div>
+            <div>
+                <h2>Тело 2</h2>
+                <img src="images/templates/body/Body2.png" alt="Простой треугольник" title="Тело номер один">
+            </div>
+            <div>
+                <h2>Тело 3</h2>
+                <img src="images/templates/body/Body3.png" alt="Простой треугольник" title="Тело номер один">
+            </div>
+        </div>
+    </div>
+    <div class="legs_templater technoframe">
+        <div class="jumbatrone">
+            <div>
+                <h2>Нога 1</h2>
+                <img src="images/templates/legs/Leg1.png" alt="Простой треугольник" title="Тело номер один">
+            </div>
+            <div>
+                <h2>Нога 2</h2>
+                <img src="images/templates/legs/Leg2.png" alt="Простой треугольник" title="Тело номер один">
+            </div>
+            <div>
+                <h2>Нога 3</h2>
+                <img src="images/templates/legs/Leg3.png" alt="Простой треугольник" title="Тело номер один">
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="Scripts/mainPageEngine.js"></script>
 </body>
 </html>
