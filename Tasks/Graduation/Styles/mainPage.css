@@ -335,11 +335,63 @@ header > :nth-child(n+2) {
     width: 30px;
     background-color: blueviolet;
     position: absolute;
+    transition: 0.5s;
+    transition-timing-function: linear;
+    z-index: 3;
 }
+
+.forceX{
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 2px);
+    height: 4px;
+    background-color: orangered;
+    width: 0;
+}
+
+.forceY{
+    position: absolute;
+    left: calc(50% + 2px);
+    top: 50%;
+    height: 0;
+    background-color: darkgreen;
+    width: 4px;
+}
+
+.speedX {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 2px);
+    height: 4px;
+    background-color: orange;
+    width: 0;
+}
+
+.speedY {
+    position: absolute;
+    left: calc(50% - 2px);
+    top: 50%;
+    height: 0;
+    background-color:greenyellow;
+    width: 4px;
+}
+
+.joint__grounded{
+background-color: brown;
+}
+
 .joint__sample{
     position: static;
 }
-.bone {background-color: #888888; width: 30px; height: 10px; transform-origin: top left; position: absolute;}
+.bone {
+    background-color: #888888;
+    width: 30px;
+    height: 10px;
+    transform-origin: top left;
+    position: absolute;
+    transition: 0.5s;
+    transition-timing-function: linear;
+}
 
 .gratitues_page_body {
     max-width: 900px;
