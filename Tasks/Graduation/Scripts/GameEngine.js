@@ -2,31 +2,44 @@ function kd(text,smth) {
     console.debug(text);
     console.debug(smth);
 }
-const jointWith = 30;
 
+
+const jointWith = 30;
 const jointHeight = 30;
 const boneLenght = 30;
+const actuatorLenght =30;
 const gravity = 1;
 const friction = 1;
 const groundLevel = 600;
-const jointWeight = 50;
-const boneWeight = 0.05;                 //weight per pixel of length
-const gameSpeed = 500;                 //delay in ms between frames
-const minForceToRound = gravity;
+const jointWeight = 25;
+const boneWeight = 0.3;                 //weight per pixel of length
+const gameSpeed = 0.5;                 //delay in ms between frames
+const minForceToRound = 2;
+const actuatorMaxForce = 300;
+const boneSpringiness = 2;
+const frictionForce = 200;
 const debugMode = true;
 
-function projectForce(force, angle) {
-    kd("projecting force",[force, angle]);
-    let forceAngle = Math.atan(force[1]/force[0])*57.29;
-    if (force[0]<0) {forceAngle -= 180;}
-    kd("angle of force now", forceAngle);
-    let vectorLength = Math.sqrt(Math.pow(force[0],2) + Math.pow(force[1],2));
-    kd("force vector length", vectorLength);
-    kd("ange between force and bone",(angle - forceAngle));
-    let projectionLength = vectorLength*Math.cos((angle - forceAngle)/57.29);
-    kd("projected force vector length", projectionLength);
-    kd("resulting force", [projectionLength*Math.cos(angle/57.29), projectionLength*Math.sin(angle/57.29)]);
-    return [projectionLength*Math.cos(angle/57.29), projectionLength*Math.sin(angle/57.29)];
+
+function createVectorFromXY (projectionXY) {
+    return ([Math.sqrt(Math.pow(projectionXY[0],2) + Math.pow(projectionXY[1],2)), Math.atan(projectionXY[1]/projectionXY[0])*57.29])
+}
+
+function createXYFromVector (vector) {
+    return ([vector[0]*Math.cos(vector[1]/57.29), vector[0]*Math.sin(vector[1]/57.29)])
+}
+
+function projectVectorOnAngle (vector, angle) {
+    let projectedVector = [vector[0]*Math.cos((vector[1] - angle)/57.29), angle];
+    return (projectedVector)
+}
+
+function getAngleBetweenDots(dot1,dot2) {
+    let x = dot2[0] - dot1[0];
+    let y = dot2[1] - dot1[1];
+    let angle = Math.atan(y/x)*57.29;
+    if (x<0) {angle = ((-1) * Math.sign(angle) * 180) + angle};
+    return angle;
 }
 
 class Joint {
@@ -39,11 +52,12 @@ class Joint {
         this.currentY = this.initialY;
 
         this.grounded = false;
-        this.fallTime = 0.5;
+        this.fallTime = gameSpeed;
 
         this.bones = [];
 
         this.speed = [0, 0];
+        this.precalcedSpeed = [0,0];
         this.resultForce = [0, 0];
 
         this.domId = "join" + number.toString();
@@ -82,7 +96,7 @@ class Joint {
     }
 
     moveTo(x, y) {
-        kd("moveto " + this.domId, [x, y]);
+        kd("move to " + this.domId, [x, y]);
         this.initialX = x;
         this.initialY = y;
 
@@ -120,25 +134,60 @@ class Joint {
             kd("to ground " + groundLevel + " current is " + this.currentY + " speed " + this.speed[1] +  " and force " + this.resultForce[1]);
             this.fallTime = (Math.sqrt(Math.pow(this.speed[1],2) + 2*this.resultForce[1]*(groundLevel - this.currentY))-this.speed[1])/this.resultForce[1];
         } else {
-            this.fallTime = 0.5;
+            this.fallTime = gameSpeed;
         }
         kd("time to fall", this.fallTime);
         return (this.fallTime)
     }
 
-    move(timeFactor) {
-        this.freshlyGroundedFlag = 0;
-        this.speed[0] += this.resultForce[0] * timeFactor/2;
-        this.speed[1] += this.resultForce[1] * timeFactor/2;
-        kd("joint speed of " + this.domId, this.speed);
+    precalcMove() {
 
-        if ((this.currentY += this.speed[1] * timeFactor + 5) >= groundLevel) {
-            this.currentX += this.speed[0] * timeFactor;
-            this.currentY = groundLevel;                                      //BIG BAD PLUG!
-            if (!this.grounded) {
+        this.precalcedSpeed = this.speed;
+
+        this.futureX = this.currentX;
+        this.futureY = this.currentY;
+
+        kd(this.domId + " will move from ", [this.currentX, this.currentY]);
+        kd(this.domId + " speedX " + this.speed[1] + " force " + this.resultForce[1]);
+
+        this.precalcedSpeed[0] += (this.resultForce[0])/2;
+        this.precalcedSpeed[1] += (this.resultForce[1])/2;
+
+        if ((this.futureY + (this.precalcedSpeed[1]) + 5) >= groundLevel) {
+            this.futureY = groundLevel;
+            if (this.grounded){
+                if (Math.abs(this.resultForce[0]) > frictionForce) {
+                    this.futureX += (this.resultForce[0] - Math.sign(this.resultForce[0])*frictionForce)/2
+                }
+            } else {
+                this.futureX += this.precalcedSpeed[0];
+            }
+        } else {
+            this.futureX += this.precalcedSpeed[0];
+            this.futureY += this.precalcedSpeed[1];
+        }
+
+        kd(this.domId + " RESULT coords will be " + this.futureX + " " + this.futureY);
+    }
+
+    move(timeFactor) {
+        kd(this.domId + " move from ", [this.currentX, this.currentY]);
+        kd(this.domId + " speedX " + this.speed[1] + " force " + this.resultForce[1] + " TIME IS " + timeFactor);
+
+        this.speed[0] += (this.resultForce[0]*timeFactor)/2;
+        this.speed[1] += (this.resultForce[1]*timeFactor)/2;
+
+        if ((this.currentY + (this.speed[1] * timeFactor) + 5) >= groundLevel) {
+            this.speed=[0,0];
+            this.currentY = groundLevel;
+            if (this.grounded){
+                if (Math.abs(this.resultForce[0]) > frictionForce) {
+                    this.currentX += ((this.resultForce[0] - Math.sign(this.resultForce[0])*frictionForce)*timeFactor)/2
+                }
+            } else {
+                this.currentX += this.speed[0] * timeFactor;
                 this.grounded = true;
                 this.domObj.classList.add("joint__grounded");
-                this.freshlyGroundedFlag = 1;
             }
         } else {
             this.grounded = false;
@@ -147,7 +196,10 @@ class Joint {
             this.domObj.classList.remove("joint__grounded");
         }
 
-        kd("move " + this.domId, [this.currentX, this.currentY]);
+
+
+        kd(this.domId + " RESULT speedX " + this.speed[1]);
+        kd(this.domId + " move to", [this.currentX, this.currentY]);
         this.domObj.style.transition = timeFactor + "s";
         this.domObj.style.top = (this.currentY).toString() + "px";
         this.domObj.style.left = (this.currentX).toString() + "px";
@@ -157,8 +209,6 @@ class Joint {
         });
 
         this.resultForce = [0, 0];
-
-        return (this.freshlyGroundedFlag);
     }
 
     reset() {
@@ -180,24 +230,20 @@ class Joint {
         let inforce = force;
         if ((Math.abs(inforce[0]) > minForceToRound) || (Math.abs(inforce[1]) > minForceToRound)) {
             if (Math.abs(inforce[0]) < minForceToRound) {
-                inforce[0] = 0
-            }
-            ;
+                inforce[0] = 0};
             if (Math.abs(inforce[1]) < minForceToRound) {
-                inforce[1] = 0
-            }
-            ;
+                inforce[1] = 0};
             kd(this.domId + " got force from " + sourceId, inforce);
+
             this.resultForce[0] += inforce[0];
             this.resultForce[1] += inforce[1];
-            if (!(sourceId == "ground") && this.grounded) {
-                this.addGroundReaction();
-            }
+
             kd(this.domId + " result force is", this.resultForce);
+
             this.bones.forEach((bone) => {
                 if (!(sourceId == bone.domId)) {
                     kd(this.domId + " pass force to " + bone.domId, inforce);
-                    bone.addForce(this.domId, projectForce(inforce, bone.angle));
+                    bone.addForce(this.domId, createXYFromVector(projectVectorOnAngle(createVectorFromXY(inforce), bone.angle)));
                 }
             })
         }
@@ -210,34 +256,47 @@ class Joint {
     }
 
     addGroundReaction() {
-        let groundReactionForce = [0, 0];
+        if (this.grounded && this.resultForce[1] > 0) {
 
-        if (this.resultForce[1] > 0) {
-            groundReactionForce[1] = -this.resultForce[1];
+            let groundReactionForce = [0, 0];
+
+                groundReactionForce[1] = -this.resultForce[1];
+
+            if (Math.abs(this.resultForce[0]) > this.resultForce[1] * friction) {
+                groundReactionForce[0] = -Math.sign(this.resultForce[0]) * this.resultForce[1] * friction;
+                this.frictionForceLeft = 0;
+            } else {
+                groundReactionForce[0] = -this.resultForce[0];
+                this.frictionForceLeft = (Math.sign(this.resultForce[0]) * this.resultForce[1] * friction) - this.resultForce[0];
+                this.frictionForceDirection = -Math.sign(this.resultForce[0]);
+                kd(this.domId + " left friction " + this.frictionForceLeft + " pointed to " + this.frictionForceDirection)
+            }
+
+            kd(this.domId + " got ground reaction ", groundReactionForce);
+
+            this.addForce("ground", groundReactionForce);
         }
-        ;
-
-        if (Math.abs(this.resultForce[0]) > this.resultForce[1] * friction) {
-            groundReactionForce[0] = -1 * Math.sign(this.resultForce[0]) * this.resultForce[1] * friction;
-        } else {
-            groundReactionForce[0] = -1 * this.resultForce[0];
-        }
-
-        this.addForce("ground", groundReactionForce);
-
     }
 
     addForceToStop(timeFactor) {
-        this.addForce("ground", [0,-this.speed[1]/timeFactor])
+        if (this.freshlyGroundedFlag == 1) {
+            kd(this.domId + " speed was ", this.speed);
+            kd(this.domId + " vertically stopped by ", [0,-this.speed[1]/timeFactor]);
+            this.addForce("ground", [0,-this.speed[1]/timeFactor])
+        }
     }
 }
+
+
+
 
 class Bone {
     constructor(number, joint1, joint2) {
 
         this.joints = [joint1,joint2];
+        this.actuators = [];
         this.domId = "bone" + number.toString();
-        kd("joints is", this.joints);
+        kd(this.domId + " joints is ", this.joints);
 
         this.domObj = document.createElement('div');
 
@@ -246,16 +305,17 @@ class Bone {
         //this.domObj.textContent = this.domId;
         this.domObj.ondragstart = function(event) {game.takeElement(event)};
         this.domObj.ondragover = function(event) {game.allowDrop(event)};
-        this.domObj.ondrop = function(event) {game.addElement(event)};
         this.domObj.draggable="true";
         game.domObj.appendChild(this.domObj);
+        this.initialLenght = Math.sqrt(Math.pow((this.joints[0].currentY-this.joints[1].currentY) ,2) + Math.pow((this.joints[0].currentX-this.joints[1].currentX),2));
         this.move();
 }
     move(timeFactor) {
         kd("move bone", this.domId);
+        this.middleX = this.joints[0].currentX + (this.joints[1].currentX-this.joints[0].currentX)/2;
+        this.middleY = this.joints[0].currentY + (this.joints[1].currentY-this.joints[0].currentY)/2;
         this.lenght = Math.sqrt(Math.pow((this.joints[0].currentY-this.joints[1].currentY) ,2) + Math.pow((this.joints[0].currentX-this.joints[1].currentX),2));
-        this.angle = Math.atan((this.joints[0].currentY-this.joints[1].currentY)/(this.joints[0].currentX-this.joints[1].currentX))*57.29;
-        if ((this.joints[0].currentX-this.joints[1].currentX)>0) {this.angle -= 180;}
+        this.angle = getAngleBetweenDots([this.joints[0].currentX,this.joints[0].currentY],[this.joints[1].currentX,this.joints[1].currentY]);
 
         this.domObj.style.transition = timeFactor + "s";
 
@@ -265,10 +325,14 @@ class Bone {
         this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
         this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
 
-        kd("bone position","rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")");
+        kd("bone position","rotate(" + this.angle + "deg) scaleX(" + (this.lenght/boneLenght) + ")");
 
         this.domObj.style.top = (this.joints[0].currentY+jointHeight/2).toString() + "px";
         this.domObj.style.left = (this.joints[0].currentX+jointWith/2).toString() + "px";
+
+        this.actuators.forEach(function (actuator) {
+            actuator.move(timeFactor)
+        });
     }
 
     addForce(sourceId, force) {
@@ -289,13 +353,128 @@ class Bone {
         kd(this.domId + " gravity", this.lenght*boneWeight*gravity);
         this.addForce("gravity", [0,this.lenght*boneWeight*gravity]);
     }
+
+    addBoneSpringiness () {
+        let futurelenght = Math.sqrt(Math.pow((this.joints[0].futureY-this.joints[1].futureY) ,2) + Math.pow((this.joints[0].futureX-this.joints[1].futureX),2));
+        let springinessForce = (this.initialLenght - futurelenght)*boneSpringiness;
+        if (springinessForce !== 0) {
+            this.joints[0].addForce(this.domId, createXYFromVector([springinessForce,this.angle]));
+            this.joints[1].addForce(this.domId, createXYFromVector([-springinessForce,this.angle]));
+        }
+    }
 }
+
+
+
+
+class Actuator {
+
+    constructor (number, bone1, bone2) {
+        this.bones = [bone1, bone2];
+
+        this.domId = "actuator" + number.toString();
+
+        kd(this.domId + " bones is ", this.bones);
+
+        this.domObj = document.createElement('div');
+
+        this.domObj.classList.add("actuator");
+        this.domObj.id = this.domId;
+        //this.domObj.textContent = this.domId;
+        this.domObj.ondragstart = function(event) {game.takeElement(event)};
+        this.domObj.ondragover = function(event) {game.allowDrop(event)};
+        this.domObj.draggable="true";
+        game.domObj.appendChild(this.domObj);
+
+        this.actuatorsToolBar = document.getElementById("actuatorsToolBar");
+        this.domProgrammBox = document.createElement("div");
+        this.domProgrammBox.textContent = this.domId;
+        this.actuatorsToolBar.appendChild(this.domProgrammBox);
+
+        this.stepProgramBars = [];
+
+        this.steps = [];
+
+        this.addStepProgramBar();
+
+        this.move();
+    }
+
+    addStepProgramBar () {
+        this.domStepProgrammBar = document.createElement("div");
+        this.domStepProgrammBar.textContent = "Step " + this.stepProgramBars.length;
+        this.domProgrammBox.appendChild(this.domStepProgrammBar);
+
+        this.domForceSlider = document.createElement('input');
+        this.domForceSlider.type="range";
+        this.domForceSlider.min=(-actuatorMaxForce).toString();
+        this.domForceSlider.max=actuatorMaxForce.toString();
+        this.domForceSlider.value="0";
+        this.domForceSlider.step = 2;
+        this.domForceSlider.classList.add("actuator_force_slider");
+        this.domProgrammBox.appendChild(this.domForceSlider);
+
+        this.domStartTimeField = document.createElement('input');
+        this.domStartTimeField.type="textarea";
+        this.domStartTimeField.title = "start time";
+        this.domProgrammBox.appendChild(this.domStartTimeField);
+
+        this.domStopTimeField = document.createElement('input');
+        this.domStopTimeField.type="textarea";
+        this.domStopTimeField.title = "stop time";
+        this.domProgrammBox.appendChild(this.domStopTimeField);
+
+        this.stepProgramBars.push([this.domForceSlider, this.domStartTimeField, this.domStopTimeField]);
+    }
+
+    createProgram () {
+        this.stepProgramBars.forEach(function (bar) {
+            this.steps.push([bar[0].value,bar[1].value,bar[2].value])
+        })
+    }
+
+    move(timeFactor) {
+        kd("move actuator", this.domId);
+        this.lenght = Math.sqrt(Math.pow((this.bones[0].middleY-this.bones[1].middleY) ,2) + Math.pow((this.bones[0].middleX-this.bones[1].middleX),2));
+        this.angle = Math.atan((this.bones[0].middleY-this.bones[1].middleY)/(this.bones[0].middleX-this.bones[1].middleX))*57.29;
+        if ((this.bones[0].middleX-this.bones[1].middleX)>0) {this.angle -= 180;}
+
+        this.domObj.style.transition = timeFactor + "s";
+
+        this.domObj.style.MozTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
+        this.domObj.style.WebkitTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
+        this.domObj.style.OTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
+        this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
+        this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
+
+        kd("bone position","rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")");
+
+        this.domObj.style.top = (this.bones[0].middleY).toString() + "px";
+        this.domObj.style.left = (this.bones[0].middleX).toString() + "px";
+    }
+
+    act(time) {
+        this.actuatorCurrentForce = 0;
+        for (step of this.steps) {
+            if (step[1]<=time && step[2]>=time) {
+                this.actuatorCurrentForce = step[0];
+            }
+        }
+        if (this.actuatorCurrentForce !== 0) {
+            this.bones[0].addForce(this.domId, createXYFromVector([-this.actuatorCurrentForce,this.angle]));
+            this.bones[1].addForce(this.domId, createXYFromVector([this.actuatorCurrentForce,this.angle]));
+        }
+    }
+}
+
+
+
 
 class Creature {
     constructor() {
         this.joints = [];
         this.bones = [];
-        this.muscles = [];
+        this.actuators = [];
         this.ground = [];
         this.lifetime = 0;
         this.interval = 0.5;
@@ -324,6 +503,17 @@ class Creature {
                 endElement.bones.push(newBone);
                 this.bones.push(newBone);
             }
+        } else if (startElementId.slice(0, 4) == "bone") {
+            kd(" it is a bone ", startElementId);
+            const starElement = this.bones[startElementId.slice(4, startElementId.length)];
+            if (endElementId.slice(0, 4) == "bone") {
+                kd("end up in other bone", endElementId);
+                const endElement = this.bones[endElementId.slice(4, endElementId.length)];
+                let newActuator = new Actuator(this.actuators.length, starElement, endElement);
+                starElement.actuators.push(newActuator);
+                endElement.actuators.push(newActuator);
+                this.actuators.push(newActuator);
+            }
         }
     }
 
@@ -339,13 +529,28 @@ class Creature {
         });
 
         kd("force from muscle", this.muscles);
-        this.muscles.forEach(function (muscle) {
-            muscle.actionTime(this.lifetime);
+        this.actuators.forEach(function (actuator) {
+            actuator.addForce(this.lifetime);
         });
+
+        kd("predict movement of ", this.joints);
+        this.joints.forEach(function (joint) {
+            joint.precalcMove();
+        });
+
+        kd("add springiness of ", this.bones);
+        this.bones.forEach(function (bone) {
+            bone.addBoneSpringiness();
+        });
+
+        //kd("add ground reaction", this.joints);
+        //this.joints.forEach(function (joint) {
+            //joint.addGroundReaction();
+        //});
     }
 
     countTimeInterval() {
-        this.interval = 0.5;
+        this.interval = gameSpeed;
         kd("closest time to ground for", this.joints);
         for (let joint of this.joints) {
             let time = joint.countTimeToGround();
@@ -358,9 +563,10 @@ class Creature {
 
     showDebugInfo() {
 
+        kd(" show forces for ", this.joints);
+
         this.calcForces();
 
-        kd("add gravity to", this.joints);
         this.joints.forEach(function (joint) {
             joint.showForceAndSpeed ();
             joint.resetResultForce ();
@@ -374,18 +580,15 @@ class Creature {
     }
 
     step() {
-        if (this.newJointsGrounded > 0) {
-            for (let joint of this.joints) {
-                joint.addForceToStop(this.interval);
-            };
-        };
-        this.newJointsGrounded = 0;
-        this.calcForces();
-        this.countTimeInterval();
-        kd("move all", this.joints);
 
+
+        this.calcForces();
+
+        this.countTimeInterval();
+
+        kd("move all", this.joints);
         for (let joint of this.joints) {
-            this.newJointsGrounded += joint.move(this.interval);
+            joint.move(this.interval);
         }
     }
 

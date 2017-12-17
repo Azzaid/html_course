@@ -393,6 +393,16 @@ background-color: brown;
     transition-timing-function: linear;
 }
 
+.actuator {
+    background-color: chocolate;
+    width: 30px;
+    height: 10px;
+    transform-origin: top left;
+    position: absolute;
+    transition: 0.5s;
+    transition-timing-function: linear;
+}
+
 .gratitues_page_body {
     max-width: 900px;
     display: grid;
