@@ -35,8 +35,8 @@ function projectVectorOnAngle (vector, angle) {
 }
 
 function getAngleBetweenDots(dot1,dot2) {
-    let x = dot2[0] - dot1[0];
-    let y = dot2[1] - dot1[1];
+    let x = dot2[0] - dot1[0] + 1;
+    let y = dot2[1] - dot1[1] + 1;
     let angle = Math.atan(y/x)*57.29;
     if (x<0) {angle = ((-1) * Math.sign(angle) * 180) + angle};
     return angle;
@@ -55,6 +55,8 @@ class Joint {
         this.fallTime = gameSpeed;
 
         this.bones = [];
+
+        this.connectedBoneAndJointPares=[];
 
         this.speed = [0, 0];
         this.precalcedSpeed = [0,0];
@@ -140,34 +142,17 @@ class Joint {
         return (this.fallTime)
     }
 
-    precalcMove() {
+    precalcSpeed() {
 
         this.precalcedSpeed = this.speed;
 
-        this.futureX = this.currentX;
-        this.futureY = this.currentY;
-
-        kd(this.domId + " will move from ", [this.currentX, this.currentY]);
-        kd(this.domId + " speedX " + this.speed[1] + " force " + this.resultForce[1]);
+        kd(this.domId + " current speed is", this.speed);
+        kd(this.domId + " force without bone springiness is", this.resultForce);
 
         this.precalcedSpeed[0] += (this.resultForce[0])/2;
         this.precalcedSpeed[1] += (this.resultForce[1])/2;
 
-        if ((this.futureY + (this.precalcedSpeed[1]) + 5) >= groundLevel) {
-            this.futureY = groundLevel;
-            if (this.grounded){
-                if (Math.abs(this.resultForce[0]) > frictionForce) {
-                    this.futureX += (this.resultForce[0] - Math.sign(this.resultForce[0])*frictionForce)/2
-                }
-            } else {
-                this.futureX += this.precalcedSpeed[0];
-            }
-        } else {
-            this.futureX += this.precalcedSpeed[0];
-            this.futureY += this.precalcedSpeed[1];
-        }
-
-        kd(this.domId + " RESULT coords will be " + this.futureX + " " + this.futureY);
+        kd(this.domId + " result speed will be ", this.precalcedSpeed);
     }
 
     move(timeFactor) {
@@ -204,8 +189,8 @@ class Joint {
         this.domObj.style.top = (this.currentY).toString() + "px";
         this.domObj.style.left = (this.currentX).toString() + "px";
 
-        this.bones.forEach(function (bone) {
-            bone.move(timeFactor)
+        this.connectedBoneAndJointPares.forEach(function (boneJointPair) {
+            boneJointPair[0].move(timeFactor)
         });
 
         this.resultForce = [0, 0];
@@ -240,10 +225,10 @@ class Joint {
 
             kd(this.domId + " result force is", this.resultForce);
 
-            this.bones.forEach((bone) => {
-                if (!(sourceId == bone.domId)) {
-                    kd(this.domId + " pass force to " + bone.domId, inforce);
-                    bone.addForce(this.domId, createXYFromVector(projectVectorOnAngle(createVectorFromXY(inforce), bone.angle)));
+            this.connectedBoneAndJointPares.forEach((boneJointPair) => {
+                if (!(sourceId == boneJointPair[0].domId) && !(sourceId == boneJointPair[1].domId)) {
+                    kd(this.domId + " pass force to " + boneJointPair[1].domId, inforce);
+                    boneJointPair[1].addForce(this.domId, createXYFromVector(projectVectorOnAngle(createVectorFromXY(inforce), getAngleBetweenDots([this.currentX,this.currentY],[boneJointPair[1].currentX,boneJointPair[1].currentY]))));
                 }
             })
         }
@@ -355,11 +340,23 @@ class Bone {
     }
 
     addBoneSpringiness () {
-        let futurelenght = Math.sqrt(Math.pow((this.joints[0].futureY-this.joints[1].futureY) ,2) + Math.pow((this.joints[0].futureX-this.joints[1].futureX),2));
-        let springinessForce = (this.initialLenght - futurelenght)*boneSpringiness;
+
+        let joint0SpeeedProjection = projectVectorOnAngle(createVectorFromXY(this.joints[0].precalcedSpeed), this.angle);
+        let joint1SpeeedProjection = projectVectorOnAngle(createVectorFromXY(this.joints[1].precalcedSpeed), this.angle+180);
+
+        let springinessForce = (joint0SpeeedProjection[0]+joint1SpeeedProjection[0])*boneSpringiness;
+
         if (springinessForce !== 0) {
-            this.joints[0].addForce(this.domId, createXYFromVector([springinessForce,this.angle]));
-            this.joints[1].addForce(this.domId, createXYFromVector([-springinessForce,this.angle]));
+            if (( this.joints[0].grounded && !this.joints[1].grounded ) || ( !this.joints[0].grounded && this.joints[1].grounded )) {
+                if (this.joints[0].grounded) {
+                    this.joints[1].addForce(this.domId, createXYFromVector([-springinessForce*2,this.angle]));
+                } else {
+                    this.joints[0].addForce(this.domId, createXYFromVector([-springinessForce*2,this.angle]));
+                }
+            } else {
+                this.joints[0].addForce(this.domId, createXYFromVector([springinessForce,this.angle]));
+                this.joints[1].addForce(this.domId, createXYFromVector([springinessForce,this.angle+180]));
+            }
         }
     }
 }
@@ -499,8 +496,8 @@ class Creature {
                 kd("end up in other joint", endElementId);
                 const endElement = this.joints[endElementId.slice(4, endElementId.length)];
                 let newBone = new Bone(this.bones.length, starElement, endElement);
-                starElement.bones.push(newBone);
-                endElement.bones.push(newBone);
+                starElement.connectedBoneAndJointPares.push([newBone, endElement]);
+                endElement.connectedBoneAndJointPares.push([newBone, starElement]);
                 this.bones.push(newBone);
             }
         } else if (startElementId.slice(0, 4) == "bone") {
@@ -535,7 +532,7 @@ class Creature {
 
         kd("predict movement of ", this.joints);
         this.joints.forEach(function (joint) {
-            joint.precalcMove();
+            joint.precalcSpeed();
         });
 
         kd("add springiness of ", this.bones);
