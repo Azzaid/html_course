@@ -23,7 +23,11 @@ const debugMode = true;
 
 
 function createVectorFromXY (projectionXY) {
-    return ([Math.sqrt(Math.pow(projectionXY[0],2) + Math.pow(projectionXY[1],2)), Math.atan(projectionXY[1]/projectionXY[0])*57.29])
+    let lenght = Math.sqrt(Math.pow(projectionXY[0],2) + Math.pow(projectionXY[1],2));
+    let angle = Math.atan(projectionXY[1]/projectionXY[0])*57.29;
+    if (projectionXY[0]<0) {angle = ((-1) * Math.sign(angle) * 180) + angle};
+    kd("will create from " + projectionXY + " and got " + [lenght, angle]);
+    return ([lenght, angle])
 }
 
 function createXYFromVector (vector) {
@@ -350,21 +354,26 @@ class Bone {
 
     addBoneSpringiness () {
 
+        kd((this.domId + " to project " + createVectorFromXY(this.joints[0].precalcedSpeed) + " on angle " + this.angle));
+        kd((this.domId + " to project " + createVectorFromXY(this.joints[1].precalcedSpeed) + " on angle " + (this.angle+180)));
+
         let joint0SpeeedProjection = projectVectorOnAngle(createVectorFromXY(this.joints[0].precalcedSpeed), this.angle);
         let joint1SpeeedProjection = projectVectorOnAngle(createVectorFromXY(this.joints[1].precalcedSpeed), this.angle+180);
 
         let springinessForce = (joint0SpeeedProjection[0]+joint1SpeeedProjection[0])*boneSpringiness;
 
+        kd(this.domId + " speed of joint1 " + joint0SpeeedProjection + " speed of joint2 " + joint1SpeeedProjection, "springiness is " + springinessForce);
+
         if (springinessForce !== 0) {
             if (( this.joints[0].grounded && !this.joints[1].grounded ) || ( !this.joints[0].grounded && this.joints[1].grounded )) {
                 if (this.joints[0].grounded) {
-                    this.joints[1].addForce(this.domId, createXYFromVector([-springinessForce*2,this.angle]));
+                    this.joints[1].addForce(this.domId, createXYFromVector([springinessForce*2,this.angle]));
                 } else {
-                    this.joints[0].addForce(this.domId, createXYFromVector([-springinessForce*2,this.angle]));
+                    this.joints[0].addForce(this.domId, createXYFromVector([springinessForce*2,this.angle]));
                 }
             } else {
                 this.joints[0].addForce(this.domId, createXYFromVector([springinessForce,this.angle]));
-                this.joints[1].addForce(this.domId, createXYFromVector([springinessForce,this.angle+180]));
+                this.joints[1].addForce(this.domId, createXYFromVector([springinessForce,this.angle]));
             }
         }
     }
