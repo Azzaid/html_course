@@ -4,8 +4,8 @@ function kd(text,smth) {
 }
 
 
-const jointWith = 30;
-const jointHeight = 30;
+const jointWith = 60;
+const jointHeight = 60;
 const boneLenght = 30;
 const actuatorLenght =30;
 const gravity = 1;
@@ -13,6 +13,7 @@ const friction = 1;
 const groundLevel = 600;
 const jointWeight = 25;
 const boneWeight = 0.3;                 //weight per pixel of length
+const boneHeigth = 20;
 const gameSpeed = 0.5;                 //delay in ms between frames
 const minForceToRound = 2;
 const actuatorMaxForce = 300;
@@ -70,7 +71,10 @@ class Joint {
         this.domObj.style.left = this.initialX + "px";
         this.domObj.id = this.domId;
 
-        this.domObj.textContent = this.domId;
+        if (debugMode) {
+            this.domObj.textContent = this.domId;
+        }
+
         this.domObj.ondragstart = function (event) {
             kd("dragged", this);
             game.takeElement(event)
@@ -108,9 +112,9 @@ class Joint {
         this.domObj.style.top = (this.initialY).toString() + "px";
         this.domObj.style.left = (this.initialX).toString() + "px";
 
-        this.bones.forEach(function (bone) {
-            bone.move()
-        })
+        this.connectedBoneAndJointPares.forEach(function (boneJointPair) {
+            boneJointPair[0].move(0.5)
+        });
     }
 
     showForceAndSpeed() {
@@ -287,7 +291,9 @@ class Bone {
 
         this.domObj.classList.add("bone");
         this.domObj.id = this.domId;
-        //this.domObj.textContent = this.domId;
+        if (debugMode) {
+            this.domObj.textContent = this.domId;
+        }
         this.domObj.ondragstart = function(event) {game.takeElement(event)};
         this.domObj.ondragover = function(event) {game.allowDrop(event)};
         this.domObj.draggable="true";
@@ -297,23 +303,26 @@ class Bone {
 }
     move(timeFactor) {
         kd("move bone", this.domId);
-        this.middleX = this.joints[0].currentX + (this.joints[1].currentX-this.joints[0].currentX)/2;
-        this.middleY = this.joints[0].currentY + (this.joints[1].currentY-this.joints[0].currentY)/2;
+        this.coordX = this.joints[0].currentX+(jointWith/2);
+        this.coordY = this.joints[0].currentY+(jointHeight/2)-(boneHeigth/2);
+        this.middleX = this.coordX + (this.joints[1].currentX-this.joints[0].currentX)/2;
+        this.middleY = this.coordY + (this.joints[1].currentY-this.joints[0].currentY)/2;
         this.lenght = Math.sqrt(Math.pow((this.joints[0].currentY-this.joints[1].currentY) ,2) + Math.pow((this.joints[0].currentX-this.joints[1].currentX),2));
         this.angle = getAngleBetweenDots([this.joints[0].currentX,this.joints[0].currentY],[this.joints[1].currentX,this.joints[1].currentY]);
 
         this.domObj.style.transition = timeFactor + "s";
+        this.domObj.style.width = this.lenght+"px";
 
-        this.domObj.style.MozTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
-        this.domObj.style.WebkitTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
-        this.domObj.style.OTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
-        this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
-        this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/boneLenght).toString() + ")";
+        this.domObj.style.MozTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.WebkitTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.OTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg)";
 
-        kd("bone position","rotate(" + this.angle + "deg) scaleX(" + (this.lenght/boneLenght) + ")");
+        kd("bone position","rotate(" + this.angle + "deg)");
 
-        this.domObj.style.top = (this.joints[0].currentY+jointHeight/2).toString() + "px";
-        this.domObj.style.left = (this.joints[0].currentX+jointWith/2).toString() + "px";
+        this.domObj.style.top = this.coordY + "px";
+        this.domObj.style.left = this.coordX + "px";
 
         this.actuators.forEach(function (actuator) {
             actuator.move(timeFactor)
@@ -401,6 +410,7 @@ class Actuator {
         this.domStepProgrammBar = document.createElement("div");
         this.domStepProgrammBar.textContent = "Step " + this.stepProgramBars.length;
         this.domProgrammBox.appendChild(this.domStepProgrammBar);
+        this.domProgrammBox.classList.add("tool_bar");
 
         this.domForceSlider = document.createElement('input');
         this.domForceSlider.type="range";
@@ -433,18 +443,21 @@ class Actuator {
     move(timeFactor) {
         kd("move actuator", this.domId);
         this.lenght = Math.sqrt(Math.pow((this.bones[0].middleY-this.bones[1].middleY) ,2) + Math.pow((this.bones[0].middleX-this.bones[1].middleX),2));
-        this.angle = Math.atan((this.bones[0].middleY-this.bones[1].middleY)/(this.bones[0].middleX-this.bones[1].middleX))*57.29;
+        this.angle = getAngleBetweenDots([this.bones[0].middleX,this.bones[0].middleY],[this.bones[1].middleX,this.bones[1].middleY]);
+        //this.angle = Math.atan((this.bones[0].middleY-this.bones[1].middleY)/(this.bones[0].middleX-this.bones[1].middleX))*57.29;
         if ((this.bones[0].middleX-this.bones[1].middleX)>0) {this.angle -= 180;}
 
         this.domObj.style.transition = timeFactor + "s";
 
-        this.domObj.style.MozTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
-        this.domObj.style.WebkitTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
-        this.domObj.style.OTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
-        this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
-        this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")";
+        this.domObj.style.width = this.lenght + "px";
 
-        kd("bone position","rotate(" + this.angle.toString() + "deg) scaleX(" + (this.lenght/actuatorLenght).toString() + ")");
+        this.domObj.style.MozTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.WebkitTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.OTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.MsTransform = "rotate(" + this.angle.toString() + "deg)";
+        this.domObj.style.transform = "rotate(" + this.angle.toString() + "deg)";
+
+        kd("bone position","rotate(" + this.angle.toString() + "deg)");
 
         this.domObj.style.top = (this.bones[0].middleY).toString() + "px";
         this.domObj.style.left = (this.bones[0].middleX).toString() + "px";
