@@ -313,6 +313,11 @@ header > :nth-child(n+2) {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+}
+
+.tool_bar input {
+    width: 80%;
 }
 
 .tool_bar__gorisontal {
@@ -327,6 +332,13 @@ header > :nth-child(n+2) {
 
 .tool_bar__vertical {
     transform:skew(0, 45deg);
+}
+
+.meter {
+    color:yellow;
+    font-size: 20px;
+    transform:skew(45deg);
+    padding-left: 20px;
 }
 
 
@@ -406,9 +418,9 @@ background-color: brown;
     position: absolute;
     transition: 0.5s;
     transition-timing-function: linear;
-    background-image: url("../images/middle_actuator.jpg");
+    background-image: url("../images/middle_actuator.png");
     background-repeat: repeat-x;
-    background-position: 0 65%;
+    background-position: 0 50%;
     background-size: 60px;
     text-align: center;
     overflow: visible;
@@ -421,7 +433,7 @@ background-color: brown;
     height: 60px;
     position: relative;
     top: -22px;
-    background-image: url("../images/Start_actuator.jpg");
+    background-image: url("../images/start_actuator.png");
     background-position:  0 65%;
     background-size: 95px;
     background-repeat: no-repeat;
